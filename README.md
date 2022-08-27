@@ -140,7 +140,7 @@ Afterall, I have two front yard lighting sets' solar cells which have two broken
 
 Engineers which I know only love one thing more than creating something ... and that's taking something someone else created, cracking it open, and figuring out how it works.  Gold medal to the engineer who can also put it back together and it still work, albeit with the obligitory "one apparently extra and unnecessary screw still sitting on the workbench" outcome, which for many of us is unavoidable.
 
-Grabbing a less-scary screwdriver, I carefully opened one of the spare solar cells.  To my joy, it was relatively straight-forward to reverse-engineer (AKA "Hack").  I pretty quickly discovered that it was not difficult to remove a few electronic components, isolating most of the electronics that ran the front yard lights (including the remote control ... I still say "_Really?_"), producing a simple solar powered battery charger.
+Grabbing a less-scary screwdriver, I carefully opened one of the spare solar cells.  To my joy, it was relatively straight-forward to reverse-engineer (AKA "Hack").  I pretty quickly discovered that it was not difficult to remove a few electronic components, isolating most of the electronics that ran the front yard lights (including the remote control receiver circuitry ... I still say "_Really?_"), producing a simple solar powered battery charger.
 
 ![Hacked solar panel battery charger](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0001-solarcell-hacking-01-20210511.JPG)
 
@@ -152,5 +152,11 @@ Grabbing a less-scary screwdriver, I carefully opened one of the spare solar cel
 
 ![Hacked solar panel battery charger](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0112-solarcell-hacking-05-20220226.JPG)
 
+I really wanted to ensure that I understood the solar cell, and particularly the charging circuit for the Lithium Ion battery.  After spend more time researching for the integrated circuit than I should admit to (it as around 5 hours, but it was a snowy day and nothing else to do), I actually have relatively high confidence that I found the IC.  Please see the "datasheets" folder for the IC's PDF.  The datasheet's sample circuitry matched the solar cell's printed circuit board layout and passive components.  Given the cost of the solar cell lighting, I knew the IC must be dirt-cheap, and it is.
 
+I contacted the manufacturer of the solar cell lighting, inquiring about the capacity of the internal Li-Ion battery.  After a couple days, I was informed that the battery has a capacity of 1200 milliamp-hours (mAH).
+
+Now armed with this information, it was time to begin reverse-engineering the back yard LED lighting.
+
+First challenge: the LED lighting was designed to run from three "AA" batteries thus 4.5 Volts.  But Li-Ion batteries have a lower 3.9 - 4.1 Volts level.
 
