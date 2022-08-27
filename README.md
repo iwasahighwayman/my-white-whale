@@ -3,8 +3,8 @@ A journey to build more environmentally-friendly LED lighting ... which turned i
 
 ![Illuminated LED Lighting](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0114-led-lights-illuminated-20220226.JPG)
 
-# How on earth did i get here?
-The last thing i remember hearing before tumbling down the hole was "_I'm late, I'm late! For a very important date! No time to say 'hello, goodbye,' I'm late, I'm late, I'm late!_".
+# How on earth did I get here?
+The last thing I remember hearing before tumbling down the hole was "_I'm late, I'm late! For a very important date! No time to say 'hello, goodbye,' I'm late, I'm late, I'm late!_".
 
 We added a small covered open-air sitting area over our patio, and thought it would be nice to add some lighting for when sitting outside in the evening.  It was a conscious decision to not added outdoor electricity, to stay within budget and maintain the aesthetics.  The sitting area faces north, and gets very little sunlight, particularly during winter; initially solar-powered lighting did not seem like an option, but more on that later.
 
@@ -78,7 +78,7 @@ I was using my normal modus operandi.
 
 Sigh.
 
-However, i had purchased a spare lighting unit for the front yard.  In our house, I have a saying: "_Pair and a spare_".  So went inside and opened another lighting unit package.  I got the largest, scary screwdriver I own, a hammer, and for good measure but thankfully unnecessary, the propane torch.  I will not be defeated by cold weather!  After creating a pilot hole, with the screwdriver and hammer, i sucessfully installed the front solar lights, coiling the LEDs artistically around the front bushes (it actually required two strings of lights to propose a nice display.)
+However, i had purchased a spare lighting unit for the front yard.  In our house, we have a saying: "_Pair and a spare_".  So went inside and opened another lighting unit package.  I got the largest, scary screwdriver I own, a hammer, and for good measure but thankfully unnecessary, the propane torch.  I will not be defeated by cold weather!  After creating a pilot hole, with the screwdriver and hammer, i sucessfully installed the front solar lights, coiling the LEDs artistically around the front bushes (it actually required two strings of lights to propose a nice display.)
 
 That night I went to the window, and was shocked to discover that there was NO illumination!
 
@@ -95,6 +95,50 @@ The third evening i went to the front window to admire my hard work and ... noth
 No illumination reflecting gently against the evening snow.
 
 Everyone other house's lights were on (I can already hear that kid saying "_Mommy ..._").
+
+It was late, cold, and really no reason to go outside now in the darkness.  Better to mount an investigation in the morning.
+
+The next day, the issue was apparent: the snow we received covered most of the solar cell, so no sunlight was getting to it.  You see, the plastic spike may be 6 inches long, but most of it goes into the ground, essentially placing the solar cells at ground level.  Add a few inches of snow and voila', no sunshine recharging the internal battery, thus no illumination.
+
+No problem: I'll simply unbury the solar cell with my snow shovel, wide enough to ensure maximum sunlight hitting it.
+
+I grabbed my trusty shovel, began carefully scraping back the snow to try to expose the solar cell.  Victory!
+
+Remember how I mentioned earlier that it took two strings of lighting to get the desired effect: no problem, I'll just dig-out the other solar cell from the snow, so it can charge it's battery also.
+
+"_Hmmm ... I think the other solar cell is right about here, so I'll just gently push the snow shovel like this until I feel the spike_"
+
+I forgot that cold temperatures make plastic brittle.
+
+"_SNAP!!!_"
+
+Sigh.
+
+OK.  I actually have one more set of lighting, and I'll use the spike from that package to replace the one I just broke.
+
+Bingo.
+
+That evening, I was rewarded with illumination.  Victory.  I will not be defeated.  Take that kid.
+
+And then it snowed again.
+
+Three days later: nothing.  Nada.  Darkness.
+
+Not to be deterred, the answer was obvious:
+
+![Front yard elevated solar panels](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0111-solarcells-on-dowels-outside-20220226.JPG)
+
+# Returning to the main road ... 
+
+The holidays were, well, strange ... due to COVID.  We did manage to carefully spend time with some family, but as with everyone in the world, we were all impacted, and not in a good way.
+
+With some spare time after the holidays, I returned to my back yard lighting conundrum.  How to obtain back yard patio illumination while being environmentally friendly and responsible?
+
+Stand-alone solar cells were pretty expensive, though had impressive charge capacity thus long light.  But even if I make that investment, i really have no aesthetic and durable installation mechanism.  Thinking back on the front yard saga, an answer was immediately: "_Might it be possible to find some way to use the front yard solar cells to power the back yard LED lights?_"
+
+Afterall, I have two front yard lighting sets' solar cells which have two broken spikes ... maybe i can use those ... somehow?
+
+
 
 
 
