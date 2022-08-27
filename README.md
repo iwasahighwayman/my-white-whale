@@ -40,6 +40,61 @@ I also discovered how expensive good solar panels with high holding capacity can
 
 So I did something completely out of character for me: I set the problem aside and focused on other projects which were interesting and would help me maintain some semblence of sanity during COVID-19 lockdown.  My normal modus-operandi is to just press harder on the challenge until victory, but instead I decided to just take a break from all this.
 
+# The first of potentially many tangential detours ... 
+
+The holidays were approaching, and we didn't want our house to look like the Grinch lived here.  The front of our house faces south, and gets soaked with sunshine even in the winter - even more-so with snow providing reflection of the sunlight.
+
+So time to purchase more LED lighting, with all the same requirements as for the back patio area lighting, except would be powered by solar.
+
+To my pleasant surprise, i was able to find an LED lighting unit which met all the requirements, including darkness-on with a timer.
+
+It even came with a remote control.
+
+"_A what?_"
+
+A remote control.
+
+"_I'm a simple man ... why on earth do i need a remote control for my outdoor lighting?_"
+
+But there it was.  I even tried to find a simpler, even less expensive product sans remote control.
+
+Nope ... "_No soup for you!_" ... Take it with the remote control or move along ...
+
+Sigh ... OK.
+
+We had gotten a cold spell just before the front yard LED lights arrived.  Most other homes already had their holiday lights installed.  I swear I heard one of the younger kids in the neighborhood, while waiting for the school bus, say "_Mommy, does the Grinch live in that house?_" to-which she replied "_Yes, I believe he does._"
+
+OK, time to get busy.
+
+The solar LED lights arrived a couple days later, just enough time for the ground to turn to granite.  I unboxed the lights, which came with a small, say 6 inch, plastic spike which goes into the ground, and then there is an adjustable mounting bracket which goes from the spike to the solar cell which powers and controls the lighting.
+
+I went outside, stretched out all the LEDs all over the front yard to untwist the wires, then knelt down to push the spike into the ground.  I mentioned the cold spell right?  "_Hmmm ... ground's pretty hard from the cold_".
+
+I carefully inspected the plastic spike.  It seemed pretty sturdy.  "_It's probably just the very top of the ground that's frozen, so I'll just apply steadily increasing pressure until this spike breaks through to soft soil_".
+
+I was using my normal modus operandi.
+
+"_SNAP!!!_"
+
+Sigh.
+
+However, i had purchased a spare lighting unit for the front yard.  In our house, I have a saying: "_Pair and a spare_".  So went inside and opened another lighting unit package.  I got the largest, scary screwdriver I own, a hammer, and for good measure but thankfully unnecessary, the propane torch.  I will not be defeated by cold weather!  After creating a pilot hole, with the screwdriver and hammer, i sucessfully installed the front solar lights, coiling the LEDs artistically around the front bushes (it actually required two strings of lights to propose a nice display.)
+
+That night I went to the window, and was shocked to discover that there was NO illumination!
+
+"_A-Ha_" I said: I bet the battery in the solar cell was not charged, and I installed the lighting mid-late day.  Sure enough, the next evening we had lighting.
+
+A couple days later: "_Mommy, did the Grinch move out of that house over there?_", to-which she replied "_Yes, I believe he did._"
+
+A few days went by and we got our first snowfall.  I thought "_Our front lights will look so nice!_", and they did that evening.
+
+And the next.
+
+The third evening i went to the front window to admire my hard work and ... nothing.
+
+No illumination reflecting gently against the evening snow.
+
+Everyone other house's lights were on (I can already hear that kid saying "_Mommy ..._").
 
 
 
