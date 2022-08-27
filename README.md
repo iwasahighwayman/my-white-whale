@@ -22,9 +22,9 @@ The lighting unit is operated by three "AA" batteries, at 4.5 Volts total.  I wo
 
 I was somewhat surprised that the batteries actually lasted for about one month.
 
-I thought "_At first i thought, that's not too bad ..._", swapped in three fresh "AA" batteries, reset the timer, and we were back in business.
+I thought "_At first I thought, that's not too bad ..._", swapped in three fresh "AA" batteries, reset the timer, and we were back in business.
 
-But after a few months, i had this small pile of dead "AA" batteries.  Our town has a yard where they can be properly disposed, so we dropped them off.
+But after a few months, I had this small pile of dead "AA" batteries.  Our town has a yard where they can be properly disposed, so we dropped them off.
 
 A little while later, I sort-of felt guilty about the waste.
 
@@ -128,7 +128,7 @@ Not to be deterred, the answer was obvious:
 
 ![Front yard elevated solar panels](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0111-solarcells-on-dowels-outside-20220226.JPG)
 
-# Returning to the main road ... 
+# Returning to the main road, for now ... 
 
 The holidays were, well, strange ... due to COVID.  We did manage to carefully spend time with some family, but as with everyone in the world, we were all impacted, and not in a good way.
 
@@ -138,7 +138,19 @@ Stand-alone solar cells were pretty expensive, though had impressive charge capa
 
 Afterall, I have two front yard lighting sets' solar cells which have two broken spikes ... maybe i can use those ... somehow?
 
+Engineers which I know only love one thing more than creating something ... and that's taking something someone else created, cracking it open, and figuring out how it works.  Gold medal to the engineer who can also put it back together and it still work, albeit with the obligitory "one apparently extra and unnecessary screw still sitting on the workbench" outcome, which for many of us is unavoidable.
 
+Grabbing a less-scary screwdriver, I carefully opened one of the spare solar cells.  To my joy, it was relatively straight-forward to reverse-engineer (AKA "Hack").  I pretty quickly discovered that it was not difficult to remove a few electronic components, isolating most of the electronics that ran the front yard lights (including the remote control ... I still say "_Really?_"), producing a simple solar powered battery charger.
+
+![Hacked solar panel battery charger](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0001-solarcell-hacking-01-20210511.JPG)
+
+![Hacked solar panel battery charger](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0006-solarcell-hacking-02-20210511.JPG)
+
+![Hacked solar panel battery charger](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0008-solarcell-hacking-03-20210511.JPG)
+
+![Hacked solar panel battery charger](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0014-solarcell-hacking-04-20210511.JPG)
+
+![Hacked solar panel battery charger](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0112-solarcell-hacking-05-20220226.JPG)
 
 
 
