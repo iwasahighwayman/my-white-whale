@@ -334,7 +334,7 @@ But then i noticed that although the LEDs would illuminate once I went out to th
 
 I assumed that after about a year and a half of repeated daily solar cell charging and evening LED lighting discharging of the solar cell's internal Li-Ion batteries, the batteries were starting to fail to hold a charge.
 
-I still felt pretty good about my little odysee: the two solar cell Li-Ion batteries are about the size of two "C" cell batteries.  Had I simply used three sets of three "AA" batteries over 18 months, that would have been 9 x 18 or over 160 "AA" batteries taken to the town lot for disposal.
+I still felt pretty good about my little odyssey: the two solar cell Li-Ion batteries are about the size of two "C" cell batteries.  Had I simply used three sets of three "AA" batteries over 18 months, that would have been 9 x 18 or over 160 "AA" batteries taken to the town lot for disposal.
 
 BTW, I neglected to mention early-on: rechargeable "AA" batteries do not have nearly the milliamp-hour capacity of a normal alkaline battery.  By my calculations, would have needed three sets of nine rechargeable, plus the actual charging unit.  My calculations showed that every 2nd or at most 3rd evening, I would need to swap out nine depleted rechargeable "AA" batteries for freshly charged ones.  That would grow old quickly.
 
@@ -382,7 +382,7 @@ Four terminal blocks are integrated with the three controller boards.  The red t
 
 This enclosure will be placed on the ground on the north side of the west column, replacing the prior power junction / distribution enclosure.
 
-The last step was to once again collect Ladder-Zilla, and completely redo the telephone extension cable wiring.  In this new architecture, it is no longer power to the LED lighting controller boxes distributed around the sitting area.  Instead, the four conductor telephone wire is used only to carry the LED illumination signals.  One discreet length of the four conductor telephone wire was layed across the crossbeam, to feed the LED signals for the east column lighting.  Next the crossbeam lighting string was taken down and flipped, so that the LED signal leads were closest to the west column, drastically reducing the length (and parasitic resistance) of the four conductor telephone wire.  Also, the four conductor telephone wires were no longer carrying 2 x 100 mA for both the east and crossbeam light strings - each telephone wire only carried the 95 mA or so used to illuminate a single string of LED lights.  So even though there was a relatively long length of telephone wire from the west column "_Unified Multi-Zoned LED Lighting Controller Apparatus_" to the east column string of LEDs, that undesired voltage drop due to the telephone wire resistance split in half again, yielding nearly the same peak-to-peak voltage across each of the strings of LEDs.
+The last step was to once again collect Ladder-Zilla, and completely redo the telephone extension cable wiring.  In this new architecture, it is no longer power to the LED lighting controller boxes distributed around the sitting area.  Instead, the four conductor telephone wire is used only to carry the LED illumination signals.  One discreet length of the four conductor telephone wire was laid across the crossbeam, to feed the LED signals for the east column lighting.  Next the crossbeam lighting string was taken down and flipped, so that the LED signal leads were closest to the west column, drastically reducing the length (and parasitic resistance) of the four conductor telephone wire.  Also, the four conductor telephone wires were no longer carrying 2 x 100 mA for both the east and crossbeam light strings - each telephone wire only carried the 95 mA or so used to illuminate a single string of LED lights.  So even though there was a relatively long length of telephone wire from the west column "_Unified Multi-Zoned LED Lighting Controller Apparatus_" to the east column string of LEDs, that undesired voltage drop due to the telephone wire resistance split in half again, yielding nearly the same peak-to-peak voltage across each of the strings of LEDs.
 
 I was forced to do a third, final round of soldering iron gymnastics for the east column's LED string, mostly because I was too lazy to unwind that lighting string and perform the soldering on the hobby bench.  But the other two LED strings were bench-soldered, and going forward, if an LED string failed, I'll simply take down that failed string and bench-solder the necessary length telephone wiring replacement.
 
@@ -400,7 +400,7 @@ OK, let's get to work reverse-engineering, beginning with trying to understand t
 
 Unlike the the front yard solar cell lights, which use a three-wire LED configuration and relatively high voltage (+/- 60 Volts peak-to-peak ... I nearly fried my low-cost digital oscilloscope which has a 40 Volt max input range), the back yard LED lights use a two-wire LED configuration with a +/- 5.8 Volts peak-to-peak range.
 
-Given that there is only a single 4.5 Volt power supply, the LED signals are created using a "push-pull" or "H-Bridge" circuit.  For the first half of the square wave period, one of the LED driver connectors is positive 2.85 Volts relative to the other connector.  Then when the second half of the square wave period begins, the polarity flips and now what was positive 2.85 Volts is now negative by the same amount.  When the LED signals are in a positive-negative plarity, half of the LEDs illuminate and the other half are off.  Then when the LED signal polarity flips, the illuminated / off LEDs are reversed.  I believe this is achieved by single LEDs of anode / cathode direction alternating with single LEDs of cathode / anode direction LEDs.  The directional single LEDs are then wired in parallel to create the full length of the LED lighting string.  The string of LEDs are hermetically sealed with shrink wrap tubing, and to truly dissect the LED string and confirm this assumption will render that string unusable.  So for now I just accept that this assumption is how the LEDs are actually wired.  Single LEDs in each direction makes sense, since 2.85 Volts is approximately what would be needed to illuminate a single white LED.
+Given that there is only a single 4.5 Volt power supply, the LED signals are created using a "push-pull" or "H-Bridge" circuit.  For the first half of the square wave period, one of the LED driver connectors is positive 2.85 Volts relative to the other connector.  Then when the second half of the square wave period begins, the polarity flips and now what was positive 2.85 Volts is now negative by the same amount.  When the LED signals are in a positive-negative polarity, half of the LEDs illuminate and the other half are off.  Then when the LED signal polarity flips, the illuminated / off LEDs are reversed.  I believe this is achieved by single LEDs of anode / cathode direction alternating with single LEDs of cathode / anode direction LEDs.  The directional single LEDs are then wired in parallel to create the full length of the LED lighting string.  The string of LEDs are hermetically sealed with shrink wrap tubing, and to truly dissect the LED string and confirm this assumption will render that string unusable.  So for now I just accept that this assumption is how the LEDs are actually wired.  Single LEDs in each direction makes sense, since 2.85 Volts is approximately what would be needed to illuminate a single white LED.
 
 Also, at first glance, the square wave appears to be approximately 110 Hz, but on more careful inspection, there is actually a 1.65 KHz sub-harmonic "inner" square wave within the 110 Hz "outer" square wave.  Though I am focusing on "steady-on" of the LEDs, this is how the LED controller creates the other lighting patterns such as chasing and fading, by adjusting (pulse width modulating) the "outer" square wave to be other than a steady 110 Hz.
 
@@ -416,7 +416,7 @@ As indicated in the schematic, unfortunately this circuit's square wave is produ
 
 The bias / offset can be easily removed with a de-biasing circuit:
 
-![De-Biasing ciruit schematic](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-nmos-debias-schematic-20220827.png)
+![De-Biasing circuit schematic](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-nmos-debias-schematic-20220827.png)
 
 Alternatively, there are many examples of multivibrators which use more common bipolar junction transistors (BJTs), or for even lower quiescent power consumption, metal oxide semiconductor field effect transistors (MOSFETs):
 
@@ -472,7 +472,7 @@ But that won't work.
 
 "_How am I supposed to create my dynasty as the overarching leader in producing environmentally-friendly LED lighting solutions, if I cannot obtain the necessary raw materials?_"
 
-I suppose I could subcontract the actual assembly of the devices to a 3rd-party, but that will just cut into my assired future mega-profits.
+I suppose I could subcontract the actual assembly of the devices to a 3rd-party, but that will just cut into my assured future mega-profits.
 
 # Iteration #6: To the moon and back
 
@@ -494,7 +494,7 @@ The source code for as much of the basic functionality as i currently have runni
 
 # Time to go learn things ... and continue to search for my white whale
 
-And this is where this odysee, in fact obsession, currently stands.
+And this is where this odyssey, in fact obsession, currently stands.
 
 Next steps are to better-understand the Pico/XIAO capabilities, as initial research proposes that much of what was implemented in analog hardware might be reproducible directly within the digital SOC.
 
