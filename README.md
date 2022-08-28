@@ -1,6 +1,8 @@
 # my-white-whale
 A journey to build more environmentally-friendly LED lighting ... which turned into an obsession
 
+THE INFORMATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE INFORMATION OR THE USE OR OTHER DEALINGS IN THE INFORMATION.
+
 ![Illuminated LED Lighting](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0114-led-lights-illuminated-20220226.JPG)
 
 # How on earth did I get here?
@@ -438,19 +440,64 @@ It is also possible to create the push-pull / H-Bridge with BJTs, but no example
 
 This is a breadboard of these circuits chained together:
 
-![Breadboard circuit of essential sub-circuits to produce steady-on LED illumination](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0195-multivibrator-debias-inverter-push-pull-h-bridge-20220827.jpeg)
+![Breadboard circuit of essential sub-circuits to produce steady-on LED illumination breadboard](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0195-multivibrator-debias-inverter-push-pull-h-bridge-20220827.jpeg)
 
-One word of caution: due to the use of discrete, relatively higher power transistors in the push-pull / H-Bridge circuit, the voltage produced is nearly double the voltage produced by the factory LED controller integrated circuit.  In testing momentarily, the higher voltage did not seem to damage the string of LEDs, but that may not be true if operated at this higher voltage over an extended window of time.
+One word of caution: due to the use of discrete, relatively higher power transistors in the push-pull / H-Bridge circuit, the voltage produced is nearly double the voltage produced by the factory LED controller integrated circuit.  In testing momentarily, the higher voltage did not seem to damage the string of LEDs, but that may not be true if operated at this higher voltage over an extended window of time.  
 
-![](/images/)
+Given that the current through each of the three LED lighting strings is approximately 100 mA, so 300 mA total, we could possibly use one 3 Ohm resistor between each of the push-pull / H-Bridge driver contacts and the actual string of LEDs, for a total of 6 Ohms total inline with the LED strings.  With 300 mA flowing thru the resistors, this would reduce the 4.5 Volt peaks by 1.8 Volts, resulting in 2.7 Volt peaks, or 5.4 Volts peak-to-peak.  Some experimentation with resistor values is probably required.  This would be slightly wasteful use of limited solar cell battery power capacity, though any other option will probably waste even more power.
 
+Next, it would be nice if a darkness detector could be used to turn on the LED lights.
 
-![](/images/)
+Here is one proven circuit which uses a 555 Schmitt trigger to that when the phototransistor is just barely switching light vs. dark detection, there is no "bounce" or "banging" of the output signal when right on that threshold betwee light vs. dark.
 
+![Phototransistor-based darkness detector using a 555 Schmitt trigger for debounce schematic](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-phototransistor-555-schmitt-trigger-schematic-20220827.png)
 
-![](/images/)
+Here is a breadboard wiring of this circuit:
 
+![Phototransistor-based darkness detector using a 555 Schmitt trigger for debounce breadboard](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0197-phototransistor-555-schmitt-trigger-20220827.jpeg)
 
-![](/images/)
+# Iteration #5: Does anybody really know what time it is?
+
+If the solar cell's battery was a much larger capacity, I may be less concerned about limiting the time that the LED lighting strings are illuminated, to say the evening hours we're actually awake to enjoy them.  But the solar cell's capacity is quite limited, so we really only want the lighting strings to run 4 or 5 or 6 hours after they turned on, be it from darkness detection, or as is the factory controller a simple 24-hour 6-hour "ON" timer which begins when you turn the lighting on.
+
+Having designed and built many "flip flop" binary ripple counter circuits over the years, I figured I would just get ahead of the curve and order a dozen of each 4060 and 4020 counter integrated circuits (ICs), so they'll be here when ready to breadboard and then actually for-real build all this.
+
+OK, now I feel really, really old.
+
+The 4000 series of ICs were tablestakes chips to build systems.  It turns out in the year 2022, they are somewhat obtainable in surface mount packaging, but traditional dual in-line packages (DIPs) are unavailable, take weeks or months to receive after ordering, or are rediculously expensive.
+
+If I rummage around in my old electronics boxes, I probably can find a handful of each of these.
+
+But that won't work.
+
+"_How am I supposed to create my dynasty as the overarching leader in producing environmentally-friendy LED lighting solutions, if I cannot obtain the necessary raw materials?_"
+
+I suppose I could subcontract the actual assembly of the devices to a 3rd-party, but that will just cut into my mega-profits.
+
+# Iteration #6: To the moon and back
+
+I have been using Raspberry PI's for small, odd projects for a while now, but to-date I have never used the "Pico" model, which is not a single board computer (SBC) running Linux, but rather a small, sub-ten-dollar system-on-a-chip (SOC) based on Raspberry PI's own ARM CPU, the RP4020.  It has just enough periphery components to plug into a breadboard or printed circuit board, then add any additional components one needs for her/his specific project.
+
+There is also a Pico clone from the vendor Seeed Studio (no, that's not misspelled ... there really are three "e" letters in the vendor's name).  Although the official Raspberry PI Pico is very small, about a third of a post-it note, the Seeed Studio XIAO RP2040 is 1/3rd the size of the Pico.  The Seeed device is double or more than the Pico, but that's still less than $15.
+
+Looking at the specifications, the RP2040 SOC contains thousands (tens of thousands?) of times the horsepower of the IBM computer that propelled US astronauts to the moon and back.
+
+I should be able to use this to make back yard lighting illuminate, with all the requirements met.
+
+I'm currently using a late 2018 Intel I7 16 GB RAM Macbook Pro, to develop, compile and debug the RP2040 microcode / firmware which runs on either the Pico or XIAO.  I needed to install a small number of ARM development toolchains, but the steps are well-documented by Raspberry PI, and the resultant binary can run on either device (just be sure to only target input / output (IO) available on the much smaller and pin-reduced XIAO device.)
+
+Here is a picture of my XIAO breadboarded.  The black wire when pulled down to ground represents my darkness detector detecting darkness.  The green wire when pulled down to ground represents a momentary push button which after three seconds toggles the power-on state from off to on, or vice-versa.  The orange is the output pin which indicates whether the LEDs should be illuminated or not.
+
+![Seeed Studio XIAO RP2040 breadboard](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0200-seeed-studio-xiao-rp2040-20220827.jpeg)
+
+The source code for as much of the basic functionality as i currently have running is available in the "source" subdirectory.  It currently toggles the LED illumination on for one second then off for two seconds.  The code started with a combination of the serial USB sample SDK code, plus the blink sample SDK code, plus my own logic additions.
+
+# Time to go learn things ... and continue to search for my white whale
+
+And this is where this odysee, in fact obsession, currently stands.
+
+Next steps are to better-understand the Pico/XIAO capabilities, as initial research proposes that much of what was implemented in analog hardware might be reproducible directly within the digital SOC.
+
+My intent is to continue to add to this work, providing updates as progress is made.
 
 
