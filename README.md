@@ -156,7 +156,7 @@ Stand-alone solar cells were pretty expensive, though had impressive charge capa
 
 After all, I have two front yard lighting sets' solar cells which have two broken spikes ... maybe i can use those ... somehow?
 
-Engineers which I know only love one thing more than creating something ... and that's taking something someone else created, cracking it open, and figuring out how it works.  Gold medal to the engineer who can also put it back together and it still work, albeit with the obligatory "one apparently extra and unnecessary screw still sitting on the workbench" outcome, which for many of us is unavoidable.
+Engineers who I know only love one thing more than creating something ... and that's taking something someone else created, cracking it open, and figuring out how it works.  Gold medal to the engineer who can also put it all back together and it still works, albeit with the obligatory "_one apparently extra and unnecessary screw still sitting on the workbench_" outcome, which for many of us is unavoidable.
 
 Grabbing a less-scary screwdriver, I carefully opened one of the spare solar cells.  To my joy, it was relatively straight-forward to reverse-engineer (AKA "Hack").  I pretty quickly discovered that it was not difficult to remove a few mechanical and electronic components, isolating most of the electronics that ran the front yard lights (including the remote control receiver circuitry ... I still say "_Really?_"), producing a simple solar powered battery charger.
 
@@ -170,7 +170,7 @@ Grabbing a less-scary screwdriver, I carefully opened one of the spare solar cel
 
 ![Hacked solar panel battery charger](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0112-solarcell-hacking-05-20220226.JPG)
 
-I really wanted to ensure that I understood the solar cell, and particularly the charging circuit for the Lithium Ion battery.  After spend more time researching for the integrated circuit than I should admit to (it was around 5 hours, but it was a snowy day and nothing else to do), I actually have relatively high confidence that I found the IC.  Please see the "datasheets" folder for the IC's PDF.  The datasheet's sample circuitry matched the solar cell's printed circuit board layout and passive components.  Given the cost of the solar cell lighting, I knew the IC must be dirt-cheap, and it is.
+I really wanted to ensure that I understood the solar cell, and particularly the charging circuit for the Lithium Ion (Li-Ion) battery.  After spend more time researching for the integrated circuit than I should admit to (it was around 5 hours, but it was a snowy day and nothing else to do), I actually have relatively high confidence that I found the IC.  Please see the "datasheets" folder for the IC's PDF.  The datasheet's sample circuitry matched the solar cell's printed circuit board layout and passive components.  Given the cost of the solar cell lighting, I knew the IC must be dirt-cheap, and it is.
 
 I contacted the manufacturer of the solar cell lighting, inquiring about the capacity of the internal Li-Ion battery.  After a couple days, I was informed that the battery has a capacity of 1200 milliamp-hours (mAH).
 
@@ -256,7 +256,7 @@ First I installed the buck voltage converter into a relatively waterproof enclos
 
 I placed the converter enclosure in the front yard, elevated by a couple bricks to try to keep it out of the snow, and connected the solar cells.
 
-I then ran my 22 AWS wire up to a waterproof termination / distribution box, which would take in the power wire from the converter enclosure and connect that to three smaller, more discreet wires that would be fed to each of the three LED lighting units mounted on the columns of the covered patio roof.
+I then ran my 22 AWS wire up to a waterproof termination / distribution box in the back yard, on the ground on the north side of the west column, which would take in the power wire from the front yard voltage converter enclosure and connect that to three smaller, more discreet wires that would be fed to each of the three LED lighting units mounted on the columns of the covered patio area.
 
 When I originally attached the LED lighting controllers to the columns, I had a "50-50 shot" as to which column the unit with the LEDs spanning the cross beam should be mounted.  This was all done back when I was using the "AA" batteries, so the choice did not seem too relevant.
 
@@ -268,7 +268,7 @@ This is called an "_Architecture Decision_" ... and I blew it.
 
 The covered patio area is actually quite tall.  In order to run the LED lighting, I needed to use my 9 foot wooden (AKA weighs a ton) step ladder.  Once again I dragged it out of the garage and around to the back yard, so that I could run the smaller, more discreet and aesthetic wire along the crossbar and down to now two LED lighting controllers, mounted on the east column.  The entire effort took close to an hour, to make things look nice.
 
-Next, I connected stripped the smaller, more discreet wires, to begin connecting them to the two east column controllers.
+Next, I stripped the smaller, more discreet wires, to begin connecting them to the two east column hanging LED controllers.
 
 Upon stripping the insulation, I noticed the actual copper wire itself was awfully small in diameter.  You see, I purchased a 50 foot white telephone extension wire.  Telephone wire has historically been 26 AWG, but these copper strands were definitely far smaller.
 
@@ -396,9 +396,9 @@ I began to think: "_What if the strings of LED lighting (which are now optimally
 
 Obviously, as an Electrical Engineer, I should be able to recreate the LED controller functionality, right?
 
-OK, let's get to work reverse-engineering, beginning with trying to understand the LED signals themselves.
+OK, let's get to work reverse-engineering the LED controller, beginning with trying to understand the LED signals themselves.
 
-Unlike the the front yard solar cell lights, which use a three-wire LED configuration and relatively high voltage (+/- 60 Volts peak-to-peak ... I nearly fried my low-cost digital oscilloscope which has a 40 Volt max input range), the back yard LED lights use a two-wire LED configuration with a +/- 5.8 Volts peak-to-peak range.
+Unlike the the front yard solar cell lights, which use a three-wire LED configuration and relatively high voltage (+/- 60 Volts peak-to-peak ... I nearly fried my low-cost digital oscilloscope which has a 40 Volt max input range), the back yard LED lights use a two-wire LED configuration with a +/- 5.8 Volts peak-to-peak range (approximately 2.85 Volts in each alternating direction of LED drive.)
 
 Given that there is only a single 4.5 Volt power supply, the LED signals are created using a "push-pull" or "H-Bridge" circuit.  For the first half of the square wave period, one of the LED driver connectors is positive 2.85 Volts relative to the other connector.  Then when the second half of the square wave period begins, the polarity flips and now what was positive 2.85 Volts is now negative by the same amount.  When the LED signals are in a positive-negative polarity, half of the LEDs illuminate and the other half are off.  Then when the LED signal polarity flips, the illuminated / off LEDs are reversed.  I believe this is achieved by single LEDs of anode / cathode direction alternating with single LEDs of cathode / anode direction LEDs.  The directional single LEDs are then wired in parallel to create the full length of the LED lighting string.  The string of LEDs are hermetically sealed with shrink wrap tubing, and to truly dissect the LED string and confirm this assumption will render that string unusable.  So for now I just accept that this assumption is how the LEDs are actually wired.  Single LEDs in each direction makes sense, since 2.85 Volts is approximately what would be needed to illuminate a single white LED.
 
@@ -478,7 +478,7 @@ I suppose I could subcontract the actual assembly of the devices to a 3rd-party,
 
 I have been using Raspberry PI's for small, odd projects for a while now, but to-date I have never used the "Pico" model, which is not a single board computer (SBC) running Linux, but rather a small, sub-ten-dollar system-on-a-chip (SOC) based on Raspberry PI's own ARM CPU, the RP4020.  It has just enough periphery components to plug into a breadboard or printed circuit board, then add any additional components one needs for her/his specific project.
 
-There is also a Pico clone from the vendor Seeed Studio (no, that's not misspelled ... there really are three "e" letters in the vendor's name).  Although the official Raspberry PI Pico is very small, about a third of a post-it note, the Seeed Studio XIAO RP2040 is 1/3rd the size of the Pico.  The Seeed device is double or more than the Pico, but that's still less than $15.
+There is also a Pico clone from the vendor Seeed Studio (no, that's not misspelled ... there really are three "e" letters in the vendor's name).  Although the official Raspberry PI Pico is very small, about a third of a post-it note, the Seeed Studio XIAO RP2040 is 1/3rd the size of the Pico.  The Seeed device costs double or more than the Pico, but that's still less than $15.
 
 Looking at the specifications, the RP2040 SOC contains thousands (tens of thousands?) of times the horsepower of the IBM computer that propelled US astronauts to the moon and back.
 
