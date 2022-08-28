@@ -376,7 +376,81 @@ After a day or so at the hobby bench with a piece of pre-drilled and tinned prin
 
 ![Unified Multi-Zoned LED Lighting Controller Apparatus](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0203-original-electronics-in-waterproof-enclosure-20220827.jpeg)
 
+Four terminal blocks are integrated with the three controller boards.  The red terminal block is to receive the 4.5 Volt power supply from the solar cell batteries and buck voltage converter, with the "+" and "-" supplies connected to all three LED controllers.  The remaining three black, green and blue terminal blocks are each connected to a single LED controller's output LED driving connectors.
+
+This enclosure will be placed on the ground on the north side of the west column, replacing the prior power junction / distribution enclosure.
+
+The last step was to once again collect Ladder-Zilla, and completely redo the telephone extension cable wiring.  In this new architecture, it is no longer power to the LED lighting controller boxes distributed around the sitting area.  Instead, the four conductor telephone wire is used only to carry the LED illumination signals.  One discreet length of the four conductor telephone wire was layed across the crossbeam, to feed the LED signals for the east column lighting.  Next the crossbeam lighting string was taken down and flipped, so that the LED signal leads were closest to the west column, drastically reducing the length (and parasitic resistance) of the four conductor telephone wire.  Also, the four conductor telephone wires were no longer carrying 2 x 100 mA for both the east and crossbeam light strings - each telephone wire only carried the 95 mA or so used to illuminate a single string of LED lights.  So even though there was a relatively long length of telephone wire from the west column "_Unified Multi-Zoned LED Lighting Controller Apparatus_" to the east column string of LEDs, that undesired voltage drop due to the telephone wire resistance split in half again, yielding nearly the same peak-to-peak voltage across each of the strings of LEDs.
+
+I was forced to do a third, final round of soldering iron gymnastics for the east column's LED string, mostly because I was too lazy to unwind that lighting string and perform the soldering on the hobby bench.  But the other two LED strings were bench-soldered, and going forward, if an LED string failed, I'll simply take down that failed string and bench-solder the necessary length telephone wiring replacement.
+
 This new architecture fullfilled all the new requirements, and improved upon the implementation for the original requirements.
 
+# Iteration #4: Just can't leave it alone ...
+
+My next and perhaps geekiest indulgence began.
+
+I began to think: "_What if the strings of LED lighting (which are now optimally configured to maximize illumination and simplify maintenance) continue to work perfectly, but more of the controller boards burn up, and there are continued supply chain issues?_"
+
+Obviously, as an Electrical Engineer, I should be able to recreate the LED controller functionality, right?
+
+OK, let's get to work reverse-engineering, beginning with trying to understand the LED signals themselves.
+
+Unlike the the front yard solar cell lights, which use a three-wire LED configuration and relatively high voltage (+/- 60 Volts peak-to-peak ... I nearly fried my low-cost digital oscilloscope which has a 40 Volt max input range), the back yard LED lights use a two-wire LED configuration with a +/- 5.8 Volts peak-to-peak range.
+
+Given that there is only a single 4.5 Volt power supply, the LED signals are created using a "push-pull" or "H-Bridge" circuit.  For the first half of the square wave period, one of the LED driver connectors is positive 2.85 Volts relative to the other connector.  Then when the second half of the square wave period begins, the polarity flips and now what was positive 2.85 Volts is now negative by the same amount.  When the LED signals are in a positive-negative plarity, half of the LEDs illuminate and the other half are off.  Then when the LED signal polarity flips, the illuminated / off LEDs are reversed.  I believe this is achieved by single LEDs of anode / cathode direction alternating with single LEDs of cathode / anode direction LEDs.  The directional single LEDs are then wired in parallel to create the full length of the LED lighting string.  The string of LEDs are hermetically sealed with shrink wrap tubing, and to truly disect the LED string and confirm this assumption will render that string unusable.  So for now I just accept that this assumption is how the LEDs are actually wired.  Single LEDs in each direction makes sense, since 2.85 Volts is approximately what would be needed to illuminate a single white LED.
+
+Also, at first glance, the square wave appears to be approximately 110 Hz, but on more careful inspection, there is actually a 1.65 KHz sub-harmonic "inner" square wave within the 110 Hz "outer" square wave.  Though I am focusing on "steady-on" of the LEDs, this is how the LED controller creates the other lighting patterns such as chasing and fading, by adjusting (pulse width modulating) the "outer" square wave to be other than a steady 110 Hz.
+
+The inner square wave sub-harmonic does not really add much value for the "steady-on" illumination pattern ... we really only need any square wave which oscillates faster than the human eye can detect alternation, which is about 30 Hz on average.
+
+First we need to start off with a square wave generator, in electrical engineering terms a "multivibrator".
+
+One possible circuit is using a TL431 precision voltage reference for the signal gain needed to oscillate:
+
+![TL431-based multivibrator schematic](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-tl431-multivibrator-schematic-20220827.png)
+
+As indicated in the schematic, unfortunately this circuit's square wave is produced with a 2 Volt bias (offset).
+
+The bias / offset can be easily removed with a de-biasing circuit:
+
+![De-Biasing ciruit schematic](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-nmos-debias-schematic-20220827.png)
+
+Alternatively, there are many examples of multivibrators which use more common bipolar junction transistors (BJTs), or for even lower quiescent power consumption, metal oxide semicondutor field effect transistors (MOSFETs):
+
+![N-Channel MOSFET-based multivibrator schematic](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-nmos-multivibrator-schematic-20220827.png)
+
+Next, in order to drive the "push-pull" or "H-Bridge" LED driver circuit, we need to create a complementing invert of the square wave.  In fact, we want to gang two of these in series, with the first inverting circuit primarily providing a high input impedence buffer, and then the second inverter being the actual "not" signal of the preceding buffer.
+
+![Inverting circuit schematic](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-nmos-inverter-schematic-20220827.png)
+
+Next, the last circuit in the essential circuits to illuminate the LEDs as "steady-on" is the actual "push-pull" or "H-Bridge" circuit.
+
+This can be created using a combination of BJTs and MOSFETS:
+
+![NMOS PNP Push-Pull H-Bridge schematic](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-nmos-pnp-push-pull-h-bridge-schematic-20220827.png)
+
+Or created using only MOSFETS:
+
+![NMOS PMOS Push-Pull H-Bridge schematic](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-nmos-pmos-push-pull-h-bridge-schematic-20220827.png)
+
+It is also possible to create the push-pull / H-Bridge with BJTs, but no example is provided here.
+
+This is a breadboard of these circuits chained together:
+
+![Breadboard circuit of essential sub-circuits to produce steady-on LED illumination](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0195-multivibrator-debias-inverter-push-pull-h-bridge-20220827.jpeg)
+
+One word of caution: due to the use of discrete, relatively higher power transistors in the push-pull / H-Bridge circuit, the voltage produced is nearly double the voltage produced by the factory LED controller integrated circuit.  In testing momentarily, the higher voltage did not seem to damage the string of LEDs, but that may not be true if operated at this higher voltage over an extended window of time.
+
+![](/images/)
+
+
+![](/images/)
+
+
+![](/images/)
+
+
+![](/images/)
 
 
