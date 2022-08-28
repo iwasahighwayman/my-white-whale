@@ -12,19 +12,25 @@ So the conclusion was to purchase some battery-powered LED lighting.  The produc
 
 Oh, and the product needed to be modestly priced, as I would need multiple strands of lighting to achieve the desired effect.  Plus being outdoors, invariably there would be failures that would need replacements.
 
+# Iteration #1: Purchase batteries in bulk
+
 In the end, most of the requirements could be met, but not all of them.  I found an LED lighting unit which does not have the darkness-on, but it does have a 6-hour on / 18-hour off timer.  It is designed for outdoor use and is reasonably sturdy and waterproof.
 
 There are multiple lighting modes, such as alternating blinking, fade in and out, flashing which was just annoying and steady-on.
 
 Being a simple man, we went with steady-on.
 
-The lighting unit is operated by three "AA" batteries, at 4.5 Volts total.  I wondered: how long can three batteries last with LED lights steady-on for six hours each day.
+The lighting unit is operated by three "AA" batteries, at 4.5 Volts total.
+
+In order to wrap around the two outdoor columns, plus across the span, i needed a total of three LED lighting units.
+
+I wondered: how long can three batteries last with LED lights steady-on for six hours each day.
 
 I was somewhat surprised that the batteries actually lasted for about one month.
 
-I thought "_At first I thought, that's not too bad ..._", swapped in three fresh "AA" batteries, reset the timer, and we were back in business.
+I thought "_At first I thought, that's not too bad ..._", swapped in three fresh "AA" batteries, times three lighting units so nine batteries total, reset the timer, and we were back in business.
 
-But after a few months, I had this small pile of dead "AA" batteries.  Our town has a yard where they can be properly disposed, so we dropped them off.
+But after a few months, I had this not-so-small pile of dead "AA" batteries.  Our town has a yard where they can be properly disposed, so we dropped them off.
 
 A little while later, I sort-of felt guilty about the waste.
 
@@ -38,7 +44,7 @@ I also discovered how expensive good solar panels with high holding capacity can
 
 "_There must be a way ..._"
 
-So I did something completely out of character for me: I set the problem aside and focused on other projects which were interesting and would help me maintain some semblence of sanity during COVID-19 lockdown.  My normal modus-operandi is to just press harder on the challenge until victory, but instead I decided to just take a break from all this.
+So I did something completely out of character for me: I set the problem aside and focused on other projects which were interesting and would help me maintain some semblence of sanity during the COVID-19 lockdown.  My normal modus-operandi is to just press harder on the challenge until victory, but instead I decided to just take a break from all this.
 
 # The first of potentially many tangential detours ... 
 
@@ -134,13 +140,15 @@ The holidays were, well, strange ... due to COVID.  We did manage to carefully s
 
 With some spare time after the holidays, I returned to my back yard lighting conundrum.  How to obtain back yard patio illumination while being environmentally friendly and responsible?
 
+# Iteration #2A: Hacking the solar panel
+
 Stand-alone solar cells were pretty expensive, though had impressive charge capacity thus long light.  But even if I make that investment, i really have no aesthetic and durable installation mechanism.  Thinking back on the front yard saga, an answer was immediately: "_Might it be possible to find some way to use the front yard solar cells to power the back yard LED lights?_"
 
 Afterall, I have two front yard lighting sets' solar cells which have two broken spikes ... maybe i can use those ... somehow?
 
 Engineers which I know only love one thing more than creating something ... and that's taking something someone else created, cracking it open, and figuring out how it works.  Gold medal to the engineer who can also put it back together and it still work, albeit with the obligitory "one apparently extra and unnecessary screw still sitting on the workbench" outcome, which for many of us is unavoidable.
 
-Grabbing a less-scary screwdriver, I carefully opened one of the spare solar cells.  To my joy, it was relatively straight-forward to reverse-engineer (AKA "Hack").  I pretty quickly discovered that it was not difficult to remove a few electronic components, isolating most of the electronics that ran the front yard lights (including the remote control receiver circuitry ... I still say "_Really?_"), producing a simple solar powered battery charger.
+Grabbing a less-scary screwdriver, I carefully opened one of the spare solar cells.  To my joy, it was relatively straight-forward to reverse-engineer (AKA "Hack").  I pretty quickly discovered that it was not difficult to remove a few mechanical and electronic components, isolating most of the electronics that ran the front yard lights (including the remote control receiver circuitry ... I still say "_Really?_"), producing a simple solar powered battery charger.
 
 ![Hacked solar panel battery charger](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0001-solarcell-hacking-01-20210511.JPG)
 
@@ -152,11 +160,77 @@ Grabbing a less-scary screwdriver, I carefully opened one of the spare solar cel
 
 ![Hacked solar panel battery charger](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0112-solarcell-hacking-05-20220226.JPG)
 
-I really wanted to ensure that I understood the solar cell, and particularly the charging circuit for the Lithium Ion battery.  After spend more time researching for the integrated circuit than I should admit to (it as around 5 hours, but it was a snowy day and nothing else to do), I actually have relatively high confidence that I found the IC.  Please see the "datasheets" folder for the IC's PDF.  The datasheet's sample circuitry matched the solar cell's printed circuit board layout and passive components.  Given the cost of the solar cell lighting, I knew the IC must be dirt-cheap, and it is.
+I really wanted to ensure that I understood the solar cell, and particularly the charging circuit for the Lithium Ion battery.  After spend more time researching for the integrated circuit than I should admit to (it was around 5 hours, but it was a snowy day and nothing else to do), I actually have relatively high confidence that I found the IC.  Please see the "datasheets" folder for the IC's PDF.  The datasheet's sample circuitry matched the solar cell's printed circuit board layout and passive components.  Given the cost of the solar cell lighting, I knew the IC must be dirt-cheap, and it is.
 
 I contacted the manufacturer of the solar cell lighting, inquiring about the capacity of the internal Li-Ion battery.  After a couple days, I was informed that the battery has a capacity of 1200 milliamp-hours (mAH).
 
-Now armed with this information, it was time to begin reverse-engineering the back yard LED lighting.
+# Iteration #2B: Voltage conversion experimentation
 
-First challenge: the LED lighting was designed to run from three "AA" batteries thus 4.5 Volts.  But Li-Ion batteries have a lower 3.9 - 4.1 Volts level.
+Now armed with this information, it was time to design the power distribution from the front yard solar cells, to the back yard LED lighting.
+
+First challenge: the back yard LED lighting was designed to run from three "AA" batteries thus 4.5 Volts.  But Li-Ion batteries have a lower 3.9 - 4.1 Volts level.  I therefore needed to do a voltage transformation to get to the necessary 4.5 Volts.
+
+My first attempt was to place two hacked solar panels in parallel, then connect them thru the obligitory forward-bias diodes to prevent one solar cell's battery back-feeding the other solar cell's battery.  The diodes are critical for parallel-connected DC power sources, as their drain rates are never perfectly equal, and in a worst-case situation the absense of diodes can lead to overheating and possibly the smell of melting plastic and silicon.
+
+I found a small, relatively efficient boost ("step-up") voltage switching converter, calibrated it to 4.5 Volts output and began running my power delivery duration tests.  Each morning, i would place the solar panels out on the front steps, to be charged through the day.  Then that evening, I would connect the solar cells as described to a single spare back yard LED lighting unit, moniting the converter voltage through the evening into the next day.
+
+The LED lighting unit consumes approximately 100 milliamps (mA), so theoretically each 1200 milliamp-hour solar cell battery should supply about 12 hours of power, so for two batteries that should be about 24 hours.
+
+Such idealized math rarely works out in the real world, and this was the case here.
+
+Repeated experiments over a couple weeks showed that after about 14 hours, the solar cell batteries would begin to deplete and their voltage would drop.  The LEDs would begin to dim, and by 18 hours, the solar cell batteries had no charge left.
+
+The problem is that the required diodes drop approximately 1/2 Volt, with 100 mA flowing through each diode.  That's pure wasted power.  And the switching boost voltage convert probably had an efficiency rating of perhaps 90-ish percent, so again more wasted power.
+
+And in the back yard, I have three LED lighting units, each consuming 100 mA.
+
+With this battery configuration, the front yard solar cells and batteries would only power the back yard LED lighting for one evening.  Solar cells have been around since the 1960's, so there has been a lot of time to improve them to require less and less sunlight to produce an equivalent power output.  If the next day was overcast, the batteries would still mostly or fully charge.  But if the next day was very cloudy and very little sunshine, then no LED illumination that evening.
+
+Time to try something different ...
+
+Buck ("step-down") switching voltage converters tend to be a little more efficient than their boost cousins.
+
+So now if instead I configure the solar cell batteries to be in series, I can eliminate the need of the two diodes (and their associated power waste).
+
+The resultant 4.1 x 2 or 8.2 Volt power supply was then bucked down to 4.5 Volts, and the experiments were repeated.
+
+After a few rounds of "charge all day" then "drain all night" over the course of a week or so, the single spare backyard LED lighting unit consuming 100 mA would operate at 4.5 Volts for 21 or 22 hours.
+
+So when dividing that time window by three, for the three actual backyard LED lighting units running for six hours, the solar cell batteries should still have some charge remaining the next morning.
+
+# Iteration #2C: Electrical transmission lines
+
+In order to get the front yard solar cell batteries' power to the back yard LED lighting units, i'll need to run some two-conductor insulated wire.
+
+Determining the optimal diameter of the wire, called the "gage", specifically "American wire gage" (AWG), is part science and part art.
+
+The smaller the gage, the larger the wire diameter, and the lower power loss due to the wire.
+
+But as the gage size increases, the wire gets more expensive and more difficult to handle.
+
+Plus although low voltage, the wire will be outside so I wanted double-insulated conductors.
+
+After performing some calculations, and then reading some reviews, I settled on using 22 AWG twisted copper wire.
+
+Toilette paper was definitely not the only supply chain disrupted during COVID, but certainly got the most news coverage.
+
+I began searching all the likely distribution channels for a 100 foot coil of 22 AWG wire, and began to panic.
+
+"_Out of stock_"
+
+"_Unavailable for the foreseeable future_"
+
+"_Would you like to be placed on the backorder list?_"
+
+No I don't want to be on the backorder list ... I just want to purchase my spool of wire!
+
+Finally after more patient searching, I found a spool, and I should receive it in a couple days.  I without looking too closely, I added it to my online shopping cart and proceeded to checkout.
+
+Then I saw the total bill.
+
+"_Are you kidding me?!?!_"
+
+Sigh ... I made the purchase, rationalizing that even with this gouging, I really had no alternative, and this next phase of my project would keep me sane during COVID and was still less expensive than a good therapist.
+
+
 
