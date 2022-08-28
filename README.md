@@ -190,7 +190,7 @@ Time to try something different ...
 
 Buck ("step-down") switching voltage converters tend to be a little more efficient than their boost cousins.
 
-![Buck step-down switching voltage converter](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0113-voltage-buck-down-converter-20220226)
+![Buck step-down switching voltage converter](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0113-voltage-buck-down-converter-20220226.JPG)
 
 So now if instead I configure the solar cell batteries to be in series, I can eliminate the need of the two diodes (and their associated power waste).
 
