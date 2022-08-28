@@ -276,5 +276,24 @@ I made the decision that there's "_no going back to battery-powered_" operation.
 
 So I ran an extension cord, and got my trusty soldering iron.
 
+The LED controller boxes for the LED lights that ran up the columns were located near the bottom of the columns (high enough in elevation to be above the snowline of a typical snow storm).  I soldered the power wires to the battery springs inside the LED controller enclosure.  It was a difficult job holding the wire and enclosure still with one hand, and then feed the solder into the soldering iron tip pressed against the wire and springs.  After some trial and error, manual dexterity prevailed, albeit with a few splatters of bright silver solder onto our dark gray patio stones.  I discovered for the smaller splatters, I could use my pocket knife to lift the splatters completely.  But for one larger splatter, there would remain some small remnant of the splatter probably forever.
+
+The crossbeam LED lights controller was mounted higher up on the east column.  I was not comfortable soldering from the large, heavy 9 foot step ladder, so i put it back into the garage and instead used a two-step step stool.  I then set forth, balancing on the step stool, to perform the same soldering technique.  I turned out the step stool proved to make things feel far more rickety, and I realized I was applying far too much solder to the iron, with this ever-growing ball of bright silver solder hanging precariously off the end of the iron, over my dark gray stones.
+
+Now, you need to understand that solder melts between 350 and 400 degrees fahrenheit.
+
+And it was a human, natural reaction when I saw the ball of solder drip off the iron, headed towards the patio stones.
+
+After yelling "_No!_", I did what nobody should do: I reached out my (ungloved) hand and caught the solder.
+
+Remember how earlier I mentioned that it was a bitter cold day, growing even colder as the sun began to set.  I'm not sure if not being able to feel my fingers made the situation better or worse, but upon smelling burning flesh, my hand reflexed and I threw the solder off the patio and into the snow.  I flung the soldering iron away from me, nearly fell off the step stool, and ran for the snow bank and plunged my hand into it.
+
+After catching my breath, and giving my hand a chance to start working again, I did successfully manage to make the final solder connections to the third and last LED contoller.
+
+It was nearly dark, and my hand ached.  I put the soldering iron, step stool and other items away.
+
+It was time for a "_quarantini_" and see the results of my now solar powered back yard LED lights.
+
+
 
 
