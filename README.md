@@ -54,17 +54,25 @@ So time to purchase more LED lighting, with all the same requirements as for the
 
 To my pleasant surprise, i was able to find an LED lighting unit which met all the requirements, including darkness-on with a timer.
 
+A couple pictures:
+
+![Solar powered LED lighting - boxed](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0216-solar-cell-led-lights-boxed-20220827.jpeg)
+
+![Illuminated LED lighting - contents](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0217-solar-cell-led-lights-in-box-20220827.jpeg)
+
 It even came with a remote control.
 
 "_A what?_"
 
 A remote control.
 
+![Solar powered LED lighting - remote control](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0219-solar-cell-led-lights-remote-control-20220828.jpeg)
+
 "_I'm a simple man ... why on earth do i need a remote control for my outdoor lighting?_"
 
 But there it was.  I even tried to find a simpler, even less expensive product sans remote control.
 
-Nope ... "_No soup for you!_" ... Take it with the remote control or move along ...
+Nope ... "_No soup for you!_" ... Take it with the remote control or move along.
 
 Sigh ... OK.
 
@@ -72,7 +80,7 @@ We had gotten a cold spell just before the front yard LED lights arrived.  Most 
 
 OK, time to get busy.
 
-The solar LED lights arrived a couple days later, just enough time for the ground to turn to granite.  I unboxed the lights, which came with a small, say 6 inch, plastic spike which goes into the ground, and then there is an adjustable mounting bracket which goes from the spike to the solar cell which powers and controls the lighting.
+The solar LED lights arrived a couple days later, just enough time for the ground to freeze into granite.  I unboxed the lights, which came with a small, say 6 inch, plastic spike which goes into the ground, and then there is an adjustable mounting bracket which goes from the spike to the solar cell which powers and controls the lighting.
 
 I went outside, stretched out all the LEDs all over the front yard to untwist the wires, then knelt down to push the spike into the ground.  I mentioned the cold spell right?  "_Hmmm ... ground's pretty hard from the cold_".
 
@@ -284,7 +292,7 @@ Now, you need to understand that solder melts between 350 and 400 degrees fahren
 
 And it was a human, natural reaction when I saw the ball of solder drip off the iron, headed towards the patio stones.
 
-After yelling "_No!_", I did what nobody should do: I reached out my (ungloved) hand and caught the solder.
+After yelling "_No!_", I did what nobody should do: I reached out my (ungloved) hand and caught the white-hot solder.
 
 Remember how earlier I mentioned that it was a bitter cold day, growing even colder as the sun began to set.  I'm not sure if not being able to feel my fingers made the situation better or worse, but upon smelling burning flesh, my hand reflexed and I threw the solder off the patio and into the snow.  I flung the soldering iron away from me, nearly fell off the step stool, and ran for the snow bank and plunged my hand into it.
 
@@ -315,5 +323,48 @@ Before dragging the overweight wooden 9 foot step ladder back out of the garage,
 Armed with these results, I took to the task of collecting the heavy 9 foot step ladder, de-soldering the two conductor telephone wire, removed it and replaced it with the four conductor telephone wire, and re-soldered everything.
 
 Darkness arrived and I turned on the three LED lights.  To my satisfaction, even though the east column and crossover lights had a lower voltage than the west column, all three illuminated with a similar brightness.
+
+# Iteration #3: Time for a complete refactor
+
+The three solar cell powered back yard LED light string ran relatively well thru most of winter and mid-spring.  Once in a while we good get a few very cloudy days in a row, resulting in no light show after a couple nights, but it was infrequent enough to just turn the lights back on after the first sunny day.
+
+But then i noticed that although the LEDs would illuminate once I went out to the patio and turn them on, they would only glow for an hour or two then go dark.
+
+I assumed that after about a year and a half of repeated daily solar cell charging and evening LED lighting discharging of the solar cell's internal Li-Ion batteries, the batteries were starting to fail to hold a charge.
+
+I still felt pretty good about my little odysee: the two solar cell Li-Ion batteries are about the size of two "C" cell batteries.  Had I simply used three sets of three "AA" batteries over 18 months, that would have been 9 x 18 or over 160 "AA" batteries taken to the town lot for disposal.
+
+BTW, I neglected to mention early-on: rechargeable "AA" batteries do not have nearly the milliamp-hour capacity of a normal alkaline battery.  By my calculations, would have needed three sets of nine rechargeable, plus the actual charging unit.  My calculations showed that every 2nd or at most 3rd evening, I would need to swap out nine depleted rechargeable "AA" batteries for freshly charged ones.  That would grow old quickly.
+
+Spring was moving towards summer, the days were getting longer, and the absence of evening illumination to chase away the drearies was less of a concern.
+
+Finally, one weekend day I had nothing particular to do, so I decided to check out the lighting and see if I could figure out what was wrong.  I took out both a voltmetere, and even a small portable digital oscilloscope.  The voltage readings and waveforms were totally screwy.  After some poking and prodding, I discovered the problem: one of the LED lighting controllers had gone bad, and was essentially powered-on full time.  This was pulling power 24x7 from the batteries, which were never completely solar-charging.
+
+By far, the most painful and difficult string of lights to replace are the ones on the crossbeam, as once again the heaviest 9 foot ladder ever created by humans must be collected, setup and moved multiple times.
+
+Of course that's the lighting unit which failed!
+
+I was still having occassional nightmares about catching small 350 - 400 degrees fahrenheit solder balls bare-handed, so I made the decision that if I must make yet again an investment of time to replace the failed crossbeam lighting string, I'm re-architecting the entire design based on lessons-learned.
+
+The first new requirement is: "_No more free handed hot solder gymnastics on ladders and step stools_"
+
+The second new requirement is: "_Need to figure out how to further reduce the voltage drop across tiny telephone extension wires, albeit the four conductor version_"
+
+The third new requirement is: "_Need to be able to swap-out failed LED lighting controllers more easily, without requiring hoisting of Ladder-Zilla_"
+
+The fourth new requirement is: "_Improve the aesthetics of the solution_"
+
+The LED lighting controller boxes are relatively discreet, and when mounted on the north side of the columns, are not visible from the sitting area.
+
+Here is a picture of one, with the battery access door open:
+
+![Factory LED lighting controller enclosure](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0215-led-lights-battery-case-open-20220827.jpeg)
+
+It occurred to me that most of the factory enclosure is battery space, and in fact the controller printed circuit board itself is quite small, underneath the left edge of the enclosure.
+
+Here are three controller boards which have been removed from the factory enclosure:
+
+![LED lighting controllers](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0207-led-lights-controller-boards-20220827.jpeg)
+
 
 
