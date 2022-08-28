@@ -366,5 +366,17 @@ Here are three controller boards which have been removed from the factory enclos
 
 ![LED lighting controllers](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0207-led-lights-controller-boards-20220827.jpeg)
 
+That's a little metal box used to hold your average-sized gift/credit card, so you can get a sense of how tiny the LED controller printed circuit boards are.
+
+And, there are only four connections: two for power, and two to drive the LEDs.
+
+I found and purchased a nice little IP-67 rated waterproof enclosure, some M2.5M (2.5 mm) standoffs, screws and nuts, and 2.54 mm terminal blocks.
+
+After a day or so at the hobby bench with a piece of pre-drilled and tinned printed circuit board material, I was able to successfully prepare my new "_Unified Multi-Zoned LED Lighting Controller Apparatus_".
+
+![Unified Multi-Zoned LED Lighting Controller Apparatus](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0203-original-electronics-in-waterproof-enclosure-20220827.jpeg)
+
+This new architecture fullfilled all the new requirements, and improved upon the implementation for the original requirements.
+
 
 
