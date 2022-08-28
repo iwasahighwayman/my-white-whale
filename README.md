@@ -276,7 +276,7 @@ I made the decision that there's "_no going back to battery-powered_" operation.
 
 So I ran an extension cord, and got my trusty soldering iron.
 
-The LED controller boxes for the LED lights that ran up the columns were located near the bottom of the columns (high enough in elevation to be above the snowline of a typical snow storm).  I soldered the power wires to the battery springs inside the LED controller enclosure.  It was a difficult job holding the wire and enclosure still with one hand, and then feed the solder into the soldering iron tip pressed against the wire and springs.  After some trial and error, manual dexterity prevailed, albeit with a few splatters of bright silver solder onto our dark gray patio stones.  I discovered for the smaller splatters, I could use my pocket knife to lift the splatters completely.  But for one larger splatter, there would remain some small remnant of the splatter probably forever.
+The LED controller boxes for the lights that ran up the columns were located near the bottom of the columns (high enough in elevation to be above the snowline of a typical snow storm).  I soldered the power wires to the battery springs inside the LED controller enclosure.  It was a difficult job holding the wire and enclosure still with one hand, and then feed the solder into the soldering iron tip pressed against the wire and springs.  After some trial and error, manual dexterity prevailed, albeit with a few splatters of bright silver solder onto our dark gray patio stones.  I discovered for the smaller splatters, I could use my pocket knife to lift the splatters completely.  But for one larger splatter, there would remain some small remnant of the splatter probably forever.
 
 The crossbeam LED lights controller was mounted higher up on the east column.  I was not comfortable soldering from the large, heavy 9 foot step ladder, so i put it back into the garage and instead used a two-step step stool.  I then set forth, balancing on the step stool, to perform the same soldering technique.  I turned out the step stool proved to make things feel far more rickety, and I realized I was applying far too much solder to the iron, with this ever-growing ball of bright silver solder hanging precariously off the end of the iron, over my dark gray stones.
 
@@ -294,6 +294,26 @@ It was nearly dark, and my hand ached.  I put the soldering iron, step stool and
 
 It was time for a "_quarantini_" and see the results of my now solar powered back yard LED lights.
 
+# Iteration #2F: Soldering iron gymnastics - round two
 
+Well, as you can imagine, it was visibly apparent that the east column and crossbeam LED lights were dimmer than the west column lights, due to the voltage drop across the tiny telephone extension wires.
+
+The 22 AWG wire used to go from the front yard solar cells and batteries, to the three back yard LED lights, was just too thick in diameter ... and given every foot the white outer insulation had dark black lettering with the manufacturer's information ... it would just be too visible and ugly to use across the crossbeam.
+
+I searched for white, thin wire in 26 AWG, but none was to be found, let alone without manufacturer's lettering.
+
+What could I do?
+
+In the words of Pooh: "_Think think think ..._"
+
+And then it came to me: telephone extension wires come in both two conductor (red and green) and four conductor (red, green, yellow and black) versions.  I originally purchased and strung two conductor telephone wire, which resulted in a 0.75 Volt drop.  If instead I use four conductor telephone wire, and use two conductors twisted together at both ends to carry the positive power, and the other two conductors twisted togehter at both ends to carry the neutral/ground power, then theoretically that should halve the resistance.  Instead of a 0.75 Volt drop, it should be more like 0.38 Volt drop.  Not ideal but better.
+
+I was able to find and purchase a 50 foot length of white four conductor telephone wire, with no manufacturer lettering.  It was reasonably priced and arrived in a few days.
+
+Before dragging the overweight wooden 9 foot step ladder back out of the garage, and go thru the effort of replacing the two conductor telephone wire with the four conductor telephone wire, I did an experiment.  I measured out the necessary four conductor telephone wire length, measuring three times before cutting.  I then twisted the ends and tested an extra pair of LED lighting units, with a 4.5 Volt supply on the hobby bench.  Sure enough, upon turning on the two LED lighting units, the power to them dropped to about 4.1 Volts, as anticipated.
+
+Armed with these results, I took to the task of collecting the heavy 9 foot step ladder, de-soldering the two conductor telephone wire, removed it and replaced it with the four conductor telephone wire, and re-soldered everything.
+
+Darkness arrived and I turned on the three LED lights.  To my satisfaction, even though the east column and crossover lights had a lower voltage than the west column, all three illuminated with a similar brightness.
 
 
