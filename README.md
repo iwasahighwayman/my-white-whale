@@ -8,7 +8,7 @@ THE INFORMATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IM
 # How on earth did I get here?
 The last thing I remember hearing before tumbling down the hole was "_I'm late, I'm late! For a very important date! No time to say 'hello, goodbye,' I'm late, I'm late, I'm late!_".
 
-We added a small covered open-air sitting area over our patio, and thought it would be nice to add some lighting for when sitting outside in the evening.  It was a conscious decision to not added outdoor electricity, to stay within budget and maintain the aesthetics.  The sitting area faces north, and gets very little sunlight, particularly during winter; initially solar-powered lighting did not seem like an option, but more on that later.
+We added a small covered open-air sitting area over our patio, and thought it would be nice to add some lighting for when sitting outside in the evening.  It was a conscious decision to not add outdoor electricity, to stay within budget and maintain the aesthetics.  The sitting area faces north, and gets very little sunlight, particularly during winter; initially solar-powered lighting did not seem like an option, but more on that later.
 
 So the conclusion was to purchase some battery-powered LED lighting.  The product needed to be designed for outdoor usage, across all seasons' temperatures, and reasonably waterproof.  Optionally detecting darkness to turn on the lighting would be ideal, but the product must have a built-in timer, to extend the life of the batteries vs. the lighting on through the night.  Finally, the larger the battery type, the better.
 
@@ -40,13 +40,13 @@ Being a degreed Electrical Engineer, there was only one thing to do: find a bett
 
 "_There must be a way to convert these LED lighting units to solar._"
 
-But how?  I still have the same problem: minimal direct sunlight on the nort-facing side of the house.  And mounting a solar panel in such a way to obtain the needed sunlight would either be aesthetically-unpleasant, and most-likely susceptible to damage in high winds, ice/snow storms, and other inclement weather.
+But how?  I still have the same problem: minimal direct sunlight on the north-facing side of the house.  And mounting a solar panel in such a way to obtain the needed sunlight would either be aesthetically-unpleasant, and most-likely susceptible to damage in high winds, ice/snow storms, and other inclement weather.
 
 I also discovered how expensive good solar panels with high holding capacity can cost!
 
 "_There must be a way ..._"
 
-So I did something completely out of character for me: I set the problem aside and focused on other projects which were interesting and would help me maintain some semblence of sanity during the COVID-19 lockdown.  My normal modus-operandi is to just press harder on the challenge until victory, but instead I decided to just take a break from all this.
+So I did something completely out of character for me: I set the problem aside and focused on other projects which were interesting and would help me maintain some semblance of sanity during the COVID-19 lockdown.  My normal modus-operandi is to just press harder on the challenge until victory, but instead I decided to just take a break from all this.
 
 # The first of potentially many tangential detours ... 
 
@@ -94,7 +94,7 @@ I was using my normal modus operandi.
 
 Sigh.
 
-However, i had purchased a spare lighting unit for the front yard.  In our house, we have a saying: "_Pair and a spare_".  So went inside and opened another lighting unit package.  I got the largest, scary screwdriver I own, a hammer, and for good measure but thankfully unnecessary, the propane torch.  I will not be defeated by cold weather!  After creating a pilot hole, with the screwdriver and hammer, i sucessfully installed the front solar lights, coiling the LEDs artistically around the front bushes (it actually required two strings of lights to propose a nice display.)
+However, i had purchased a spare lighting unit for the front yard.  In our house, we have a saying: "_Pair and a spare_".  So went inside and opened another lighting unit package.  I got the largest, scary screwdriver I own, a hammer, and for good measure but thankfully unnecessary, the propane torch.  I will not be defeated by cold weather!  After creating a pilot hole, with the screwdriver and hammer, i successfully installed the front solar lights, coiling the LEDs artistically around the front bushes (it actually required two strings of lights to propose a nice display.)
 
 That night I went to the window, and was shocked to discover that there was NO illumination!
 
@@ -154,9 +154,9 @@ With some spare time after the holidays, I returned to my back yard lighting con
 
 Stand-alone solar cells were pretty expensive, though had impressive charge capacity thus long light.  But even if I make that investment, i really have no aesthetic and durable installation mechanism.  Thinking back on the front yard saga, an answer was immediately: "_Might it be possible to find some way to use the front yard solar cells to power the back yard LED lights?_"
 
-Afterall, I have two front yard lighting sets' solar cells which have two broken spikes ... maybe i can use those ... somehow?
+After all, I have two front yard lighting sets' solar cells which have two broken spikes ... maybe i can use those ... somehow?
 
-Engineers which I know only love one thing more than creating something ... and that's taking something someone else created, cracking it open, and figuring out how it works.  Gold medal to the engineer who can also put it back together and it still work, albeit with the obligitory "one apparently extra and unnecessary screw still sitting on the workbench" outcome, which for many of us is unavoidable.
+Engineers which I know only love one thing more than creating something ... and that's taking something someone else created, cracking it open, and figuring out how it works.  Gold medal to the engineer who can also put it back together and it still work, albeit with the obligatory "one apparently extra and unnecessary screw still sitting on the workbench" outcome, which for many of us is unavoidable.
 
 Grabbing a less-scary screwdriver, I carefully opened one of the spare solar cells.  To my joy, it was relatively straight-forward to reverse-engineer (AKA "Hack").  I pretty quickly discovered that it was not difficult to remove a few mechanical and electronic components, isolating most of the electronics that ran the front yard lights (including the remote control receiver circuitry ... I still say "_Really?_"), producing a simple solar powered battery charger.
 
@@ -180,9 +180,9 @@ Now armed with this information, it was time to design the power distribution fr
 
 First challenge: the back yard LED lighting was designed to run from three "AA" batteries thus 4.5 Volts.  But Li-Ion batteries have a lower 3.9 - 4.1 Volts level.  I therefore needed to do a voltage transformation to get to the necessary 4.5 Volts.
 
-My first attempt was to place two hacked solar panels in parallel, then connect them thru the obligitory forward-bias diodes to prevent one solar cell's battery back-feeding the other solar cell's battery.  The diodes are critical for parallel-connected DC power sources, as their drain rates are never perfectly equal, and in a worst-case situation the absense of diodes can lead to overheating and possibly the smell of melting plastic and silicon.
+My first attempt was to place two hacked solar panels in parallel, then connect them thru the obligatory forward-bias diodes to prevent one solar cell's battery back-feeding the other solar cell's battery.  The diodes are critical for parallel-connected DC power sources, as their drain rates are never perfectly equal, and in a worst-case situation the absence of diodes can lead to overheating and possibly the smell of melting plastic and silicon.
 
-I found a small, relatively efficient boost ("step-up") voltage switching converter, calibrated it to 4.5 Volts output and began running my power delivery duration tests.  Each morning, i would place the solar panels out on the front steps, to be charged through the day.  Then that evening, I would connect the solar cells as described to a single spare back yard LED lighting unit, moniting the converter voltage through the evening into the next day.
+I found a small, relatively efficient boost ("step-up") voltage switching converter, calibrated it to 4.5 Volts output and began running my power delivery duration tests.  Each morning, i would place the solar panels out on the front steps, to be charged through the day.  Then that evening, I would connect the solar cells as described to a single spare back yard LED lighting unit, monitoring the converter voltage through the evening into the next day.
 
 The LED lighting unit consumes approximately 100 milliamps (mA), so theoretically each 1200 milliamp-hour solar cell battery should supply about 12 hours of power, so for two batteries that should be about 24 hours.
 
@@ -298,7 +298,7 @@ After yelling "_No!_", I did what nobody should do: I reached out my (ungloved) 
 
 Remember how earlier I mentioned that it was a bitter cold day, growing even colder as the sun began to set.  I'm not sure if not being able to feel my fingers made the situation better or worse, but upon smelling burning flesh, my hand reflexed and I threw the solder off the patio and into the snow.  I flung the soldering iron away from me, nearly fell off the step stool, and ran for the snow bank and plunged my hand into it.
 
-After catching my breath, and giving my hand a chance to start working again, I did successfully manage to make the final solder connections to the third and last LED contoller.
+After catching my breath, and giving my hand a chance to start working again, I did successfully manage to make the final solder connections to the third and last LED controller.
 
 It was nearly dark, and my hand ached.  I put the soldering iron, step stool and other items away.
 
@@ -316,7 +316,7 @@ What could I do?
 
 In the words of Pooh: "_Think think think ..._"
 
-And then it came to me: telephone extension wires come in both two conductor (red and green) and four conductor (red, green, yellow and black) versions.  I originally purchased and strung two conductor telephone wire, which resulted in a 0.75 Volt drop.  If instead I use four conductor telephone wire, and use two conductors twisted together at both ends to carry the positive power, and the other two conductors twisted togehter at both ends to carry the neutral/ground power, then theoretically that should halve the resistance.  Instead of a 0.75 Volt drop, it should be more like 0.38 Volt drop.  Not ideal but better.
+And then it came to me: telephone extension wires come in both two conductor (red and green) and four conductor (red, green, yellow and black) versions.  I originally purchased and strung two conductor telephone wire, which resulted in a 0.75 Volt drop.  If instead I use four conductor telephone wire, and use two conductors twisted together at both ends to carry the positive power, and the other two conductors twisted together at both ends to carry the neutral/ground power, then theoretically that should halve the resistance.  Instead of a 0.75 Volt drop, it should be more like 0.38 Volt drop.  Not ideal but better.
 
 I was able to find and purchase a 50 foot length of white four conductor telephone wire, with no manufacturer lettering.  It was reasonably priced and arrived in a few days.
 
@@ -340,13 +340,13 @@ BTW, I neglected to mention early-on: rechargeable "AA" batteries do not have ne
 
 Spring was moving towards summer, the days were getting longer, and the absence of evening illumination to chase away the drearies was less of a concern.
 
-Finally, one weekend day I had nothing particular to do, so I decided to check out the lighting and see if I could figure out what was wrong.  I took out both a voltmetere, and even a small portable digital oscilloscope.  The voltage readings and waveforms were totally screwy.  After some poking and prodding, I discovered the problem: one of the LED lighting controllers had gone bad, and was essentially powered-on full time.  This was pulling power 24x7 from the batteries, which were never completely solar-charging.
+Finally, one weekend day I had nothing particular to do, so I decided to check out the lighting and see if I could figure out what was wrong.  I took out both a voltmeter, and even a small portable digital oscilloscope.  The voltage readings and waveforms were totally screwy.  After some poking and prodding, I discovered the problem: one of the LED lighting controllers had gone bad, and was essentially powered-on full time.  This was pulling power 24x7 from the batteries, which were never completely solar-charging.
 
 By far, the most painful and difficult string of lights to replace are the ones on the crossbeam, as once again the heaviest 9 foot ladder ever created by humans must be collected, setup and moved multiple times.
 
 Of course that's the lighting unit which failed!
 
-I was still having occassional nightmares about catching small 350 - 400 degrees fahrenheit solder balls bare-handed, so I made the decision that if I must make yet again an investment of time to replace the failed crossbeam lighting string, I'm re-architecting the entire design based on lessons-learned.
+I was still having occasional nightmares about catching small 350 - 400 degrees fahrenheit solder balls bare-handed, so I made the decision that if I must make yet again an investment of time to replace the failed crossbeam lighting string, I'm re-architecting the entire design based on lessons-learned.
 
 The first new requirement is: "_No more free handed hot solder gymnastics on ladders and step stools_"
 
@@ -386,7 +386,7 @@ The last step was to once again collect Ladder-Zilla, and completely redo the te
 
 I was forced to do a third, final round of soldering iron gymnastics for the east column's LED string, mostly because I was too lazy to unwind that lighting string and perform the soldering on the hobby bench.  But the other two LED strings were bench-soldered, and going forward, if an LED string failed, I'll simply take down that failed string and bench-solder the necessary length telephone wiring replacement.
 
-This new architecture fullfilled all the new requirements, and improved upon the implementation for the original requirements.
+This new architecture fulfilled all the new requirements, and improved upon the implementation for the original requirements.
 
 # Iteration #4: Just can't leave it alone ...
 
@@ -400,7 +400,7 @@ OK, let's get to work reverse-engineering, beginning with trying to understand t
 
 Unlike the the front yard solar cell lights, which use a three-wire LED configuration and relatively high voltage (+/- 60 Volts peak-to-peak ... I nearly fried my low-cost digital oscilloscope which has a 40 Volt max input range), the back yard LED lights use a two-wire LED configuration with a +/- 5.8 Volts peak-to-peak range.
 
-Given that there is only a single 4.5 Volt power supply, the LED signals are created using a "push-pull" or "H-Bridge" circuit.  For the first half of the square wave period, one of the LED driver connectors is positive 2.85 Volts relative to the other connector.  Then when the second half of the square wave period begins, the polarity flips and now what was positive 2.85 Volts is now negative by the same amount.  When the LED signals are in a positive-negative plarity, half of the LEDs illuminate and the other half are off.  Then when the LED signal polarity flips, the illuminated / off LEDs are reversed.  I believe this is achieved by single LEDs of anode / cathode direction alternating with single LEDs of cathode / anode direction LEDs.  The directional single LEDs are then wired in parallel to create the full length of the LED lighting string.  The string of LEDs are hermetically sealed with shrink wrap tubing, and to truly disect the LED string and confirm this assumption will render that string unusable.  So for now I just accept that this assumption is how the LEDs are actually wired.  Single LEDs in each direction makes sense, since 2.85 Volts is approximately what would be needed to illuminate a single white LED.
+Given that there is only a single 4.5 Volt power supply, the LED signals are created using a "push-pull" or "H-Bridge" circuit.  For the first half of the square wave period, one of the LED driver connectors is positive 2.85 Volts relative to the other connector.  Then when the second half of the square wave period begins, the polarity flips and now what was positive 2.85 Volts is now negative by the same amount.  When the LED signals are in a positive-negative plarity, half of the LEDs illuminate and the other half are off.  Then when the LED signal polarity flips, the illuminated / off LEDs are reversed.  I believe this is achieved by single LEDs of anode / cathode direction alternating with single LEDs of cathode / anode direction LEDs.  The directional single LEDs are then wired in parallel to create the full length of the LED lighting string.  The string of LEDs are hermetically sealed with shrink wrap tubing, and to truly dissect the LED string and confirm this assumption will render that string unusable.  So for now I just accept that this assumption is how the LEDs are actually wired.  Single LEDs in each direction makes sense, since 2.85 Volts is approximately what would be needed to illuminate a single white LED.
 
 Also, at first glance, the square wave appears to be approximately 110 Hz, but on more careful inspection, there is actually a 1.65 KHz sub-harmonic "inner" square wave within the 110 Hz "outer" square wave.  Though I am focusing on "steady-on" of the LEDs, this is how the LED controller creates the other lighting patterns such as chasing and fading, by adjusting (pulse width modulating) the "outer" square wave to be other than a steady 110 Hz.
 
@@ -418,21 +418,21 @@ The bias / offset can be easily removed with a de-biasing circuit:
 
 ![De-Biasing ciruit schematic](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-nmos-debias-schematic-20220827.png)
 
-Alternatively, there are many examples of multivibrators which use more common bipolar junction transistors (BJTs), or for even lower quiescent power consumption, metal oxide semicondutor field effect transistors (MOSFETs):
+Alternatively, there are many examples of multivibrators which use more common bipolar junction transistors (BJTs), or for even lower quiescent power consumption, metal oxide semiconductor field effect transistors (MOSFETs):
 
 ![N-Channel MOSFET-based multivibrator schematic](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-nmos-multivibrator-schematic-20220827.png)
 
-Next, in order to drive the "push-pull" or "H-Bridge" LED driver circuit, we need to create a complementing invert of the square wave.  In fact, we want to gang two of these in series, with the first inverting circuit primarily providing a high input impedence buffer, and then the second inverter being the actual "not" signal of the preceding buffer.
+Next, in order to drive the "push-pull" or "H-Bridge" LED driver circuit, we need to create a complementing invert of the square wave.  In fact, we want to gang two of these in series, with the first inverting circuit primarily providing a high input impedance buffer, and then the second inverter being the actual "not" signal of the preceding buffer.
 
 ![Inverting circuit schematic](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-nmos-inverter-schematic-20220827.png)
 
 Next, the last circuit in the essential circuits to illuminate the LEDs as "steady-on" is the actual "push-pull" or "H-Bridge" circuit.
 
-This can be created using a combination of BJTs and MOSFETS:
+This can be created using a combination of BJTs and MOSFETs:
 
 ![NMOS PNP Push-Pull H-Bridge schematic](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-nmos-pnp-push-pull-h-bridge-schematic-20220827.png)
 
-Or created using only MOSFETS:
+Or created using only MOSFETs:
 
 ![NMOS PMOS Push-Pull H-Bridge schematic](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-nmos-pmos-push-pull-h-bridge-schematic-20220827.png)
 
@@ -448,7 +448,7 @@ Given that the current through each of the three LED lighting strings is approxi
 
 Next, it would be nice if a darkness detector could be used to turn on the LED lights.
 
-Here is one proven circuit which uses a 555 Schmitt trigger to that when the phototransistor is just barely switching light vs. dark detection, there is no "bounce" or "banging" of the output signal when right on that threshold betwee light vs. dark.
+Here is one proven circuit which uses a 555 Schmitt trigger to that when the phototransistor is just barely switching light vs. dark detection, there is no "bounce" or "banging" of the output signal when right on that threshold between light vs. dark.
 
 ![Phototransistor-based darkness detector using a 555 Schmitt trigger for debounce schematic](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-phototransistor-555-schmitt-trigger-schematic-20220827.png)
 
@@ -464,15 +464,15 @@ Having designed and built many "flip flop" binary ripple counter circuits over t
 
 OK, now I feel really, really old.
 
-The 4000 series of ICs were tablestakes chips to build systems.  It turns out in the year 2022, they are somewhat obtainable in surface mount packaging, but traditional dual in-line packages (DIPs) are unavailable, take weeks or months to receive after ordering, or are rediculously expensive.
+The 4000 series of ICs were table-stakes chips to build systems.  It turns out in the year 2022, they are somewhat obtainable in surface mount packaging, but traditional dual in-line packages (DIPs) are unavailable, take weeks or months to receive after ordering, or are ridiculously expensive.
 
 If I rummage around in my old electronics boxes, I probably can find a handful of each of these.
 
 But that won't work.
 
-"_How am I supposed to create my dynasty as the overarching leader in producing environmentally-friendy LED lighting solutions, if I cannot obtain the necessary raw materials?_"
+"_How am I supposed to create my dynasty as the overarching leader in producing environmentally-friendly LED lighting solutions, if I cannot obtain the necessary raw materials?_"
 
-I suppose I could subcontract the actual assembly of the devices to a 3rd-party, but that will just cut into my mega-profits.
+I suppose I could subcontract the actual assembly of the devices to a 3rd-party, but that will just cut into my assired future mega-profits.
 
 # Iteration #6: To the moon and back
 
