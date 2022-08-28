@@ -190,6 +190,8 @@ Time to try something different ...
 
 Buck ("step-down") switching voltage converters tend to be a little more efficient than their boost cousins.
 
+![Buck step-down switching voltage converter](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0113-voltage-buck-down-converter-20220226)
+
 So now if instead I configure the solar cell batteries to be in series, I can eliminate the need of the two diodes (and their associated power waste).
 
 The resultant 4.1 x 2 or 8.2 Volt power supply was then bucked down to 4.5 Volts, and the experiments were repeated.
@@ -206,13 +208,13 @@ Determining the optimal diameter of the wire, called the "gage", specifically "A
 
 The smaller the gage, the larger the wire diameter, and the lower power loss due to the wire.
 
-But as the gage size increases, the wire gets more expensive and more difficult to handle.
+But as the gage size increases, the wire gets more expensive and more stiff and difficult to handle.
 
 Plus although low voltage, the wire will be outside so I wanted double-insulated conductors.
 
 After performing some calculations, and then reading some reviews, I settled on using 22 AWG twisted copper wire.
 
-Toilette paper was definitely not the only supply chain disrupted during COVID, but certainly got the most news coverage.
+Toilette paper was definitely not the only supply chain disrupted during COVID, though it certainly got the most news coverage.
 
 I began searching all the likely distribution channels for a 100 foot coil of 22 AWG wire, and began to panic.
 
@@ -224,13 +226,55 @@ I began searching all the likely distribution channels for a 100 foot coil of 22
 
 No I don't want to be on the backorder list ... I just want to purchase my spool of wire!
 
-Finally after more patient searching, I found a spool, and I should receive it in a couple days.  I without looking too closely, I added it to my online shopping cart and proceeded to checkout.
+Finally after more patient searching, I found a spool, and I should receive it in a couple days.  Without looking too closely, I added it to my online shopping cart and proceeded to checkout.
 
 Then I saw the total bill.
 
 "_Are you kidding me?!?!_"
 
 Sigh ... I made the purchase, rationalizing that even with this gouging, I really had no alternative, and this next phase of my project would keep me sane during COVID and was still less expensive than a good therapist.
+
+# Iteration #2D: Architecture decisions
+
+My wire arrived on the scheduled day mid-week, but I knew this was going to turn into an all-day ordeal running and connecting the wire.
+
+And whatever you do, make sure you measure not twice but three or four times, before cutting the wire to length!
+
+First I installed the buck voltage converter into a relatively waterproof enclosure (more on that later):
+
+![Hacked solar panel battery charger](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0206-buck-down-voltage-converter-in-enclosure-20220827.jpeg)
+
+I placed the converter enclosure in the front yard, elevated by a couple bricks to try to keep it out of the snow, and connected the solar cells.
+
+I then ran my 22 AWS wire up to a waterproof termination / distribution box, which would take in the power wire from the converter enclosure and connect that to three smaller, more discreet wires that would be fed to each of the three LED lighting units mounted on the columns of the covered patio roof.
+
+When I originally attached the LED lighting controllers to the columns, I had a "50-50 shot" as to which column the unit with the LEDs spanning the cross beam should be mounted.  This was all done back when I was using the "AA" batteries, so the choice did not seem too relevant.
+
+As you've probably guessed: the crossbeam LED light controller (and east column controller) were mounted on the east column, and the solar cell power wire and distribution enclosure were at the base of the west column.
+
+Now, this sounds like a small concern, but turned out to be "_a significant (bad) decision which would prove to be difficult and labor-intensive to refactor_".
+
+This is called an "_Architecture Decision_" ... and I blew it.
+
+The covered patio area is actually quite tall.  In order to run the LED lighting, I needed to use my 9 foot wooden (AKA weighs a ton) step ladder.  Once again I dragged it out of the garage and around to the back yard, so that I could run the smaller, more discreet and aesthetic wire along the crossbar and down to now two LED lighting controllers, mounted on the east column.  The entire effort took close to an hour, to make things look nice.
+
+Next, I connected stripped the smaller, more discreet wires, to begin connecting them to the two east column controllers.
+
+Upon stripping the insulation, I noticed the actual copper wire itself was awfully small in diameter.  You see, I purchased a 50 foot white telephone extension wire.  Telephone wire has historically been 26 AWG, but these copper strands were definitely far smaller.
+
+So now I'm concerned about the voltage drop occurring as now not one but two LED controllers, at 100 mA each or 200 mA total, would be traversing this tiny pair of wires.
+
+I temporarily alligator-clipped the two LED controllers to the tiny pair of wires, and sure enough, instead of 4.5 Volts, the controllers were receiving 3.75 Volts, wasting almost 25% of the needed power across the tiny pair of wires.
+
+But it was now mid-afternoon, and bitter cold in early February.  I could just barely feel the tips of my fingers, so I chose to move forward as-is, and complete the hookups of the LED controllers, and see how the lights' brightness looked that night after dark.
+
+# Iteration #2E: Soldering iron gymnastics
+
+I contemplated multiple ways to connect the power wires to the LED controllers.
+
+I made the decision that there's "_no going back to battery-powered_" operation.
+
+So I ran an extension cord, and got my trusty soldering iron.
 
 
 
