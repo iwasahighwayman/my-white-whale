@@ -24,13 +24,13 @@ Being a simple man, we went with steady-on.
 
 The lighting unit is operated by three "AA" batteries, at 4.5 Volts total.
 
-In order to wrap around the two outdoor columns, plus across the span, I needed a total of three LED lighting units.
+In order to wrap around the two outdoor columns, plus across the span crossbeam, I needed a total of three LED lighting units.
 
 I wondered: how long can three batteries last with LED lights steady-on for six hours each day.
 
 I was somewhat surprised that the batteries actually lasted for about one month.
 
-I thought "_At first I thought, that's not too bad ..._", swapped in three fresh "AA" batteries, times three lighting units so nine batteries total, reset the timer, and we were back in business.
+At first I thought "_That's not too bad ..._", swapped in three fresh "AA" batteries, times three lighting units so nine batteries total, reset the timer, and we were back in business.
 
 But after a few months, I had this not-so-small pile of dead "AA" batteries.  Our town has a yard where they can be properly disposed, so we dropped them off.
 
@@ -258,7 +258,7 @@ I placed the converter enclosure in the front yard, elevated by a couple bricks 
 
 I then ran my 22 AWS wire up to a waterproof termination / distribution box in the back yard, on the ground on the north side of the west column, which would take in the power wire from the front yard voltage converter enclosure and connect that to three smaller, more discreet wires that would be fed to each of the three LED lighting units mounted on the columns of the covered patio area.
 
-When I originally attached the LED lighting controllers to the columns, I had a "50-50 shot" as to which column the unit with the LEDs spanning the cross beam should be mounted.  This was all done back when I was using the "AA" batteries, so the choice did not seem too relevant.
+When I originally attached the LED lighting controllers to the columns, I had a "50-50 shot" as to which column the unit with the LEDs spanning the crossbeam should be mounted.  This was all done back when I was using the "AA" batteries, so the choice did not seem too relevant.
 
 As you've probably guessed: the crossbeam LED light controller (and east column controller) were mounted on the east column, and the solar cell power wire and distribution enclosure were at the base of the west column.
 
