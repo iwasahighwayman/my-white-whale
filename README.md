@@ -24,7 +24,7 @@ Being a simple man, we went with steady-on.
 
 The lighting unit is operated by three "AA" batteries, at 4.5 Volts total.
 
-In order to wrap around the two outdoor columns, plus across the span, i needed a total of three LED lighting units.
+In order to wrap around the two outdoor columns, plus across the span, I needed a total of three LED lighting units.
 
 I wondered: how long can three batteries last with LED lights steady-on for six hours each day.
 
@@ -54,7 +54,7 @@ The holidays were approaching, and we didn't want our house to look like the Gri
 
 So time to purchase more LED lighting, with all the same requirements as for the back patio area lighting, except would be powered by solar.
 
-To my pleasant surprise, i was able to find an LED lighting unit which met all the requirements, including darkness-on with a timer.
+To my pleasant surprise, I was able to find an LED lighting unit which met all the requirements, including darkness-on with a timer.
 
 A couple pictures:
 
@@ -70,7 +70,7 @@ A remote control.
 
 ![Solar powered LED lighting - remote control](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0219-solar-cell-led-lights-remote-control-20220828.jpeg)
 
-"_I'm a simple man ... why on earth do i need a remote control for my outdoor lighting?_"
+"_I'm a simple man ... why on earth do I need a remote control for my outdoor lighting?_"
 
 But there it was.  I even tried to find a simpler, even less expensive product sans remote control.
 
@@ -94,7 +94,7 @@ I was using my normal modus operandi.
 
 Sigh.
 
-However, i had purchased a spare lighting unit for the front yard.  In our house, we have a saying: "_Pair and a spare_".  So went inside and opened another lighting unit package.  I got the largest, scary screwdriver I own, a hammer, and for good measure but thankfully unnecessary, the propane torch.  I will not be defeated by cold weather!  After creating a pilot hole, with the screwdriver and hammer, i successfully installed the front solar lights, coiling the LEDs artistically around the front bushes (it actually required two strings of lights to propose a nice display.)
+However, I had purchased a spare lighting unit for the front yard.  In our house, we have a saying: "_Pair and a spare_".  So went inside and opened another lighting unit package.  I got the largest, scary screwdriver I own, a hammer, and for good measure but thankfully unnecessary, the propane torch.  I will not be defeated by cold weather!  After creating a pilot hole, with the screwdriver and hammer, I successfully installed the front solar lights, coiling the LEDs artistically around the front bushes (it actually required two strings of lights to propose a nice display.)
 
 That night I went to the window, and was shocked to discover that there was NO illumination!
 
@@ -106,7 +106,7 @@ A few days went by and we got our first snowfall.  I thought "_Our front lights 
 
 And the next.
 
-The third evening i went to the front window to admire my hard work and ... nothing.
+The third evening I went to the front window to admire my hard work and ... nothing.
 
 No illumination reflecting gently against the evening snow.
 
@@ -152,9 +152,9 @@ With some spare time after the holidays, I returned to my back yard lighting con
 
 # Iteration #2A: Hacking the solar panel
 
-Stand-alone solar cells were pretty expensive, though had impressive charge capacity thus long light.  But even if I make that investment, i really have no aesthetic and durable installation mechanism.  Thinking back on the front yard saga, an answer was immediately: "_Might it be possible to find some way to use the front yard solar cells to power the back yard LED lights?_"
+Stand-alone solar cells were pretty expensive, though had impressive charge capacity thus long light.  But even if I make that investment, I really have no aesthetic and durable installation mechanism.  Thinking back on the front yard saga, an answer was immediately: "_Might it be possible to find some way to use the front yard solar cells to power the back yard LED lights?_"
 
-After all, I have two front yard lighting sets' solar cells which have two broken spikes ... maybe i can use those ... somehow?
+After all, I have two front yard lighting sets' solar cells which have two broken spikes ... maybe I can use those ... somehow?
 
 Engineers who I know only love one thing more than creating something ... and that's taking something someone else created, cracking it open, and figuring out how it works.  Gold medal to the engineer who can also put it all back together and it still works, albeit with the obligatory "_one apparently extra and unnecessary screw still sitting on the workbench_" outcome, which for many of us is unavoidable.
 
@@ -182,7 +182,7 @@ First challenge: the back yard LED lighting was designed to run from three "AA" 
 
 My first attempt was to place two hacked solar panels in parallel, then connect them thru the obligatory forward-bias diodes to prevent one solar cell's battery back-feeding the other solar cell's battery.  The diodes are critical for parallel-connected DC power sources, as their drain rates are never perfectly equal, and in a worst-case situation the absence of diodes can lead to overheating and possibly the smell of melting plastic and silicon.
 
-I found a small, relatively efficient boost ("step-up") voltage switching converter, calibrated it to 4.5 Volts output and began running my power delivery duration tests.  Each morning, i would place the solar panels out on the front steps, to be charged through the day.  Then that evening, I would connect the solar cells as described to a single spare back yard LED lighting unit, monitoring the converter voltage through the evening into the next day.
+I found a small, relatively efficient boost ("step-up") voltage switching converter, calibrated it to 4.5 Volts output and began running my power delivery duration tests.  Each morning, I would place the solar panels out on the front steps, to be charged through the day.  Then that evening, I would connect the solar cells as described to a single spare back yard LED lighting unit, monitoring the converter voltage through the evening into the next day.
 
 The LED lighting unit consumes approximately 100 milliamps (mA), so theoretically each 1200 milliamp-hour solar cell battery should supply about 12 hours of power, so for two batteries that should be about 24 hours.
 
@@ -212,7 +212,7 @@ So when dividing that time window by three, for the three actual backyard LED li
 
 # Iteration #2C: Electrical transmission lines
 
-In order to get the front yard solar cell batteries' power to the back yard LED lighting units, i'll need to run some two-conductor insulated wire.
+In order to get the front yard solar cell batteries' power to the back yard LED lighting units, I'll need to run some two-conductor insulated wire.
 
 Determining the optimal diameter of the wire, called the "gage", specifically "American wire gage" (AWG), is part science and part art.
 
@@ -288,7 +288,7 @@ So I ran an extension cord, and got my trusty soldering iron.
 
 The LED controller boxes for the lights that ran up the columns were located near the bottom of the columns (high enough in elevation to be above the snowline of a typical snow storm).  I soldered the power wires to the battery springs inside the LED controller enclosure.  It was a difficult job holding the wire and enclosure still with one hand, and then feed the solder into the soldering iron tip pressed against the wire and springs.  After some trial and error, manual dexterity prevailed, albeit with a few splatters of bright silver solder onto our dark gray patio stones.  I discovered for the smaller splatters, I could use my pocket knife to lift the splatters completely.  But for one larger splatter, there would remain some small remnant of the splatter probably forever.
 
-The crossbeam LED lights controller was mounted higher up on the east column.  I was not comfortable soldering from the large, heavy 9 foot step ladder, so i put it back into the garage and instead used a two-step step stool.  I then set forth, balancing on the step stool, to perform the same soldering technique.  I turned out the step stool proved to make things feel far more rickety, and I realized I was applying far too much solder to the iron, with this ever-growing ball of bright silver solder hanging precariously off the end of the iron, over my dark gray stones.
+The crossbeam LED lights controller was mounted higher up on the east column.  I was not comfortable soldering from the large, heavy 9 foot step ladder, so I put it back into the garage and instead used a two-step step stool.  I then set forth, balancing on the step stool, to perform the same soldering technique.  I turned out the step stool proved to make things feel far more rickety, and I realized I was applying far too much solder to the iron, with this ever-growing ball of bright silver solder hanging precariously off the end of the iron, over my dark gray stones.
 
 Now, you need to understand that solder melts between 350 and 400 degrees fahrenheit.
 
@@ -330,7 +330,7 @@ Darkness arrived and I turned on the three LED lights.  To my satisfaction, even
 
 The three solar cell powered back yard LED light string ran relatively well thru most of winter and mid-spring.  Once in a while we good get a few very cloudy days in a row, resulting in no light show after a couple nights, but it was infrequent enough to just turn the lights back on after the first sunny day.
 
-But then i noticed that although the LEDs would illuminate once I went out to the patio and turn them on, they would only glow for an hour or two then go dark.
+But then I noticed that although the LEDs would illuminate once I went out to the patio and turn them on, they would only glow for an hour or two then go dark.
 
 I assumed that after about a year and a half of repeated daily solar cell charging and evening LED lighting discharging of the solar cell's internal Li-Ion batteries, the batteries were starting to fail to hold a charge.
 
@@ -490,7 +490,7 @@ Here is a picture of my XIAO breadboarded.  The black wire when pulled down to g
 
 ![Seeed Studio XIAO RP2040 breadboard](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0200-seeed-studio-xiao-rp2040-20220827.jpeg)
 
-The source code for as much of the basic functionality as i currently have running is available in the "source" subdirectory.  It currently toggles the LED illumination on for one second then off for two seconds.  The code started with a combination of the serial USB sample SDK code, plus the blink sample SDK code, plus my own logic additions.
+The source code for as much of the basic functionality as I currently have running is available in the "source" subdirectory.  It currently toggles the LED illumination on for one second then off for two seconds.  The code started with a combination of the serial USB sample SDK code, plus the blink sample SDK code, plus my own logic additions.
 
 # Time to go learn things ... and continue to search for my white whale
 
