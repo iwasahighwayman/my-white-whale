@@ -182,7 +182,7 @@ First challenge: the back yard LED lighting was designed to run from three "AA" 
 
 My first attempt was to place two hacked solar panels in parallel, then connect them thru the obligatory forward-bias diodes to prevent one solar cell's battery back-feeding the other solar cell's battery.  The diodes are critical for parallel-connected DC power sources, as their drain rates are never perfectly equal, and in a worst-case situation the absence of diodes can lead to overheating and possibly the smell of melting plastic and silicon.
 
-I found a small, relatively efficient boost ("step-up") voltage switching converter, calibrated it to 4.5 Volts output and began running my power delivery duration tests.  Each morning, I would place the solar panels out on the front steps, to be charged through the day.  Then that evening, I would connect the solar cells as described to a single spare back yard LED lighting unit, monitoring the converter voltage through the evening into the next day.
+I found a small, relatively efficient boost (step-up) voltage switching converter, calibrated it to 4.5 Volts output and began running my power delivery duration tests.  Each morning, I would place the solar panels out on the front steps, to be charged through the day.  Then that evening, I would connect the solar cells as described to a single spare back yard LED lighting unit, monitoring the converter voltage through the evening into the next day.
 
 The LED lighting unit consumes approximately 100 milliamps (mA), so theoretically each 1200 milliamp-hour solar cell battery should supply about 12 hours of power, so for two batteries that should be about 24 hours.
 
@@ -198,7 +198,7 @@ With this battery configuration, the front yard solar cells and batteries would 
 
 Time to try something different ...
 
-Buck ("step-down") switching voltage converters tend to be a little more efficient than their boost cousins.
+Buck (step-down) switching voltage converters tend to be a little more efficient than their boost cousins.
 
 ![Buck step-down switching voltage converter](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0113-voltage-buck-down-converter-20220226.JPG)
 
@@ -334,7 +334,7 @@ But then I noticed that although the LEDs would illuminate once I went out to th
 
 I assumed that after about a year and a half of repeated daily solar cell charging and evening LED lighting discharging of the solar cell's internal Li-Ion batteries, the batteries were starting to fail to hold a charge.
 
-I still felt pretty good about my little odyssey: the two solar cell Li-Ion batteries are about the size of two "C" cell batteries.  Had I simply used three sets of three "AA" batteries over 18 months, that would have been 9 x 18 or over 160 "AA" batteries taken to the town lot for disposal.
+I still felt pretty good about my little odyssey: the two solar cell Li-Ion batteries are about the size of two "C" cell batteries.  Had I simply used three sets of three "AA" batteries over 18 months, that would have been 9 x 18 or over 160 "AA" batteries taken to the town yard for disposal.
 
 BTW, I neglected to mention early-on: rechargeable "AA" batteries do not have nearly the milliamp-hour capacity of a normal alkaline battery.  By my calculations, would have needed three sets of nine rechargeable, plus the actual charging unit.  My calculations showed that every 2nd or at most 3rd evening, I would need to swap out nine depleted rechargeable "AA" batteries for freshly charged ones.  That would grow old quickly.
 
@@ -406,7 +406,7 @@ Also, at first glance, the square wave appears to be approximately 110 Hz, but o
 
 The inner square wave sub-harmonic does not really add much value for the "steady-on" illumination pattern ... we really only need any square wave which oscillates faster than the human eye can detect alternation, which is about 30 Hz on average.
 
-First we need to start off with a square wave generator, in electrical engineering terms a "multivibrator".
+First we need to start off with a square wave generator, in electrical engineering terms an "astable multivibrator".
 
 One possible circuit is using a TL431 precision voltage reference for the signal gain needed to oscillate:
 
@@ -484,7 +484,7 @@ Looking at the specifications, the RP2040 SOC contains thousands (tens of thousa
 
 I should be able to use this to make back yard lighting illuminate, with all the requirements met.
 
-I'm currently using a late 2018 Intel I7 16 GB RAM Macbook Pro, to develop, compile and debug the RP2040 microcode / firmware which runs on either the Pico or XIAO.  I needed to install a small number of ARM development toolchains, but the steps are well-documented by Raspberry PI, and the resultant binary can run on either device (just be sure to only target input / output (IO) available on the much smaller and pin-reduced XIAO device.)
+I'm currently using a late 2018 Intel i9 16 GB RAM Macbook Pro, to develop, compile and debug the RP2040 microcode / firmware which runs on either the Pico or XIAO.  I needed to install a small number of ARM development toolchains, but the steps are well-documented by Raspberry PI, and the resultant binary can run on either device (just be sure to only target input / output (IO) available on the much smaller and pin-reduced XIAO device.)
 
 Here is a picture of my XIAO breadboarded.  The black wire when pulled down to ground represents my darkness detector detecting darkness.  The green wire when pulled down to ground represents a momentary push button which after three seconds toggles the power-on state from off to on, or vice-versa.  The orange is the output pin which indicates whether the LEDs should be illuminated or not.
 
