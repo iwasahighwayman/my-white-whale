@@ -94,7 +94,7 @@ I was using my normal modus operandi.
 
 Sigh.
 
-However, I had purchased a spare lighting unit for the front yard.  In our house, we have a saying: "_Pair and a spare_".  So went inside and opened another lighting unit package.  I got the largest, scary screwdriver I own, a hammer, and for good measure but thankfully unnecessary, the propane torch.  I will not be defeated by cold weather!  After creating a pilot hole, with the screwdriver and hammer, I successfully installed the front solar lights, coiling the LEDs artistically around the front bushes (it actually required two strings of lights to propose a nice display.)
+However, I had purchased a spare lighting unit for the front yard.  In our house, we have a saying: "_Pair and a spare_".  So I went inside and opened another lighting unit package.  I got the largest, scariest screwdriver I own, a hammer, and for good measure but thankfully unnecessary, the propane torch.  I will not be defeated by cold weather!  After creating a pilot hole, with the screwdriver and hammer, I successfully installed the front solar lights, coiling the LEDs artistically around the front bushes (it actually required two strings of lights to propose a nice display.)
 
 That night I went to the window, and was shocked to discover that there was NO illumination!
 
@@ -216,7 +216,7 @@ In order to get the front yard solar cell batteries' power to the back yard LED 
 
 Determining the optimal diameter of the wire, called the "gage", specifically "American wire gage" (AWG), is part science and part art.
 
-The smaller the gage, the larger the wire diameter, and the lower power loss due to the wire.
+The smaller the gage number, the larger the wire diameter, and the lower power loss due to the wire.
 
 But as the gage size increases, the wire gets more expensive and more stiff and difficult to handle.
 
@@ -256,7 +256,7 @@ First I installed the buck voltage converter into a relatively waterproof enclos
 
 I placed the converter enclosure in the front yard, elevated by a couple bricks to try to keep it out of the snow, and connected the solar cells.
 
-I then ran my 22 AWS wire up to a waterproof termination / distribution box in the back yard, on the ground on the north side of the west column, which would take in the power wire from the front yard voltage converter enclosure and connect that to three smaller, more discreet wires that would be fed to each of the three LED lighting units mounted on the columns of the covered patio area.
+I then ran my 22 AWG wire up to a waterproof termination / distribution box in the back yard, on the ground on the north side of the west column, which would take in the power wire from the front yard voltage converter enclosure and connect that to three smaller, more discreet wires that would be fed to each of the three LED lighting units mounted on the columns of the covered patio area.
 
 When I originally attached the LED lighting controllers to the columns, I had a "50-50 shot" as to which column the unit with the LEDs spanning the crossbeam should be mounted.  This was all done back when I was using the "AA" batteries, so the choice did not seem too relevant.
 
@@ -266,7 +266,7 @@ Now, this sounds like a small concern, but turned out to be "_a significant (bad
 
 This is called an "_Architecture Decision_" ... and I blew it.
 
-The covered patio area is actually quite tall.  In order to run the LED lighting, I needed to use my 9 foot wooden (AKA weighs a ton) step ladder.  Once again I dragged it out of the garage and around to the back yard, so that I could run the smaller, more discreet and aesthetic wire along the crossbar and down to now two LED lighting controllers, mounted on the east column.  The entire effort took close to an hour, to make things look nice.
+The covered patio area is actually quite tall.  In order to run the LED lighting, I needed to use my 9 foot wooden (AKA weighs a ton) step ladder.  Once again I dragged it out of the garage and around to the back yard, so that I could run the smaller, more discreet and aesthetic wire along the crossbeam and down to now two LED lighting controllers, mounted on the east column.  The entire effort took close to an hour, to make things look nice.
 
 Next, I stripped the smaller, more discreet wires, to begin connecting them to the two east column hanging LED controllers.
 
@@ -328,7 +328,7 @@ Darkness arrived and I turned on the three LED lights.  To my satisfaction, even
 
 # Iteration #3: Time for a complete refactor
 
-The three solar cell powered back yard LED light string ran relatively well thru most of winter and mid-spring.  Once in a while we good get a few very cloudy days in a row, resulting in no light show after a couple nights, but it was infrequent enough to just turn the lights back on after the first sunny day.
+The three solar cell powered back yard LED light string ran relatively well thru most of winter and mid-spring.  Once in a while we would get a few very cloudy days in a row, resulting in no light show after a couple nights, but it was infrequent enough to just turn the lights back on after the first sunny day.
 
 But then I noticed that although the LEDs would illuminate once I went out to the patio and turn them on, they would only glow for an hour or two then go dark.
 
