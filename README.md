@@ -500,4 +500,36 @@ Next steps are to better-understand the Pico/XIAO capabilities, as initial resea
 
 My intent is to continue to add to this work, providing updates as progress is made.
 
+# All Hallows' Eve 2022 Updates
+
+Veni Vidi Vici ...
+
+The Seeed Studio Raspberry PI implementation is working as expected, with the latest source included in the "source" directory.  As provided, once the light detector indicates darkness, the LEDs will illuminate on for one second then off for two seconds.  The source should be adjusted for the number of minutes/hours on then off.
+
+I have a backlog item to add a "timer delay after darkness detected" to the source.  This would allow, for example, darkness to be detected late afternoon (such as mid-winter) but the LEDs not turn on until a few hours later that evening.
+
+Here are some pictures of the wired-up printed circuit board, and the schematic.  It is important to remember that the Seeed Studio can accept a 5 Volt power supply (4.5 Volts also tested successfully), but operates internally at 3.3 Volts.  This means all signals into the Seeed, such as the momentary-contact switch and darkness sensor, must have a following MOSFET/BJT in an open source/collector configuration using the Seeed's internal pull-up resistors.
+
+N.B.: The push-pull/H-Bridge MOSFETs do not need to be nearly as high-powered as presented here.  These devices were selected primarily because they are actually easier to find and less expensive than TO-92 packaged transistors, particularly for P-Channel, and consume the same printed circuit board real estate when mounted vertically.
+
+Here is the pinout of the Seeed Studio board - the C source code uses the light gray micropython pin numbers.
+
+![Seeed Studio XIAO RP2040 pinout](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-seeed-studio-pinout-20221030.png)
+
+Here are pictures of the printed circuit board with Seeed Studio board plus discrete components.
+
+![Seeed Studio XIAO RP2040 pcb top](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-pcb-top-20221030.jpeg)
+
+![Seeed Studio XIAO RP2040 pcb bottom](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-pcb-bottom-20221030.jpeg)
+
+Here is the schematic.
+
+![Schematic - all](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-schematic-all-20221030.png)
+
+![Schematic - left half](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-schematic-half-left-20221030.png)
+
+![Schematic - right half](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-schematic-half-right-20221030.png)
+
+
+
 
