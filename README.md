@@ -530,6 +530,42 @@ Here is the schematic.
 
 ![Schematic - right half](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-schematic-half-right-20221030.png)
 
+# November 2022 Waning Gibbous Updates
+
+Indeed, as shared above in the "All Hallows' Eve 2022 Updates", i have working Raspberry PI Pico software which will manage the LEDs, i am still currently using the vendor-provided controllers.
+
+Frequently, we would have a very sunny day, suggesting the solar cells would fully charge the Li-Ion batteries to full capacity, which should allow the LEDs to illuminate through and beyond the full six (6) hour timed session.
+
+Sadly, more frequently than desired, less than four (4) hours after the LEDs illuminated, they would go dark.  On multiple evenings, i would immediately mount an evening investigation, and sure enough, the buck voltage converter's "power available" LED was also dark, indicating it was receiving no power from the batteries.
+
+Being a student and strong supporter of the "Scientific Method" to understanding, i began an analysis of what might be transpiring under the cover of darkness.
+
+Were rabid rabbits knawing through the wires?
+
+Were kids down the street tapping into my voltage source to power their $5,000 gaming-laptops to play "Overwatch"?
+
+Did foreign nation-states just execute an "Electro-Magnetic Pulse" ("EMP") surgically and strategically targeting my solar-based, environmentally-friendy Minimum Viable Product ("MVP"), as they were secretly trying to corner the market in this multi-trillion dollar consumer space?
+
+Or did something just "burn up"?
+
+I am blessed to have many friends, and my friends in many ways are brilliant.  
+
+Folks like me have two (2) sayings:
+
+1.  If you think you are the smartest person in the room, then that just proves you are not.
+
+2.  If you actually are the smartest person in the room, time to find a new room where you are not.
+
+
+
+Here are some pictures of these details.
+
+![Buck converter Vdd to LED Vpp correlation](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0229-buck-converter-vdd-to-led-vpp-correlation-20221110.JPG)
+
+![Buck converter output voltage reminder](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0226-buck-converter-set-output-voltage-20221110.JPG)
+
+![Buck converter power conversion efficiency](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0232-buck-converter-power-efficiency-testing-20221110.JPG)
+
 
 
 
