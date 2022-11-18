@@ -566,6 +566,9 @@ Here are some pictures of these details.
 
 ![Buck converter power conversion efficiency](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0232-buck-converter-power-efficiency-testing-20221110.JPG)
 
+![Buck converters power conversion efficiency comparison](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0236-buck-converter-efficiency-comparison-20221117.JPG)
 
+The drop-out voltage of the factory LED controller, where the controller ceases to operate, is around 2.5 Volts:
 
+![LED Controller drop-out voltage](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0235-drop-out-voltage-20221117.JPG)
 
