@@ -572,3 +572,9 @@ The drop-out voltage of the factory LED controller, where the controller ceases 
 
 ![LED Controller drop-out voltage](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0235-drop-out-voltage-20221117.JPG)
 
+Schematic for Schottky diode protected parallel solar cells / batteries:
+
+![Schottky diode parallel power](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-schottky-diode-power-20221120.png)
+
+The one (1) ohm resistors provide a test point for amount of current each solar cell / battery is providing.
+
