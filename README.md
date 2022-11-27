@@ -578,3 +578,22 @@ Schematic for Schottky diode protected parallel solar cells / batteries:
 
 The one (1) ohm resistors provide a test point for amount of current each solar cell / battery is providing.
 
+Schottky diode protected parallel solar cells / batteries circuit:
+
+![Schottky diode parallel power circuit](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0238-schottky-diode-power-circuit-20221124.JPG)
+
+Schottky diode protected parallel solar cells / batteries voltage testing after a single overnight cycle:
+
+![Schottky diode parallel voltage testing](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0240-schottky-diode-power-voltage-20221124.JPG)
+
+TL431 5 Volt trigger testing (TL431 Cathode goes low when exceed 2.5 volt internal reference voltage):
+
+![TL431 Circuit](/images/analog-TL431-5-volt-trigger-IMG_0241-20221124.JPG)
+
+![TL431 Circuit - 5.00 volts off 4.94 volts](/images/analog-TL431-5-volt-trigger-IMG_0242-5.00V-off-4.94V-20221124.JPG)
+
+![TL431 Circuit - 5.03 volts partially-on 2.21 volts](/images/analog-TL431-5-volt-trigger-IMG_0243-5.03V-partially-on-2.21V-20221124.JPG)
+
+![TL431 Circuit - 5.08 volts on 1.92 volts](/images/analog-TL431-5-volt-trigger-IMG_0244-5.08V-on-1.92V-20221124.JPG)
+
+![TL431 Circuit - 5.54 volts on 1.85 volts](/images/analog-TL431-5-volt-trigger-IMG_0245-5.54V-on-1.85V-20221124.JPG)
