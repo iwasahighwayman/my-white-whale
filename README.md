@@ -532,7 +532,7 @@ Here is the schematic.
 
 # November 2022 Waning Gibbous Updates
 
-Indeed, as shared above in the "All Hallows' Eve 2022 Updates", i have working Raspberry PI Pico software which will manage the LEDs, i am still currently using the vendor-provided controllers.
+Indeed, as shared above in the "All Hallows' Eve 2022 Updates", i have working Raspberry PI Pico software which will manage the LEDs, however i am still currently using the vendor-provided controllers.
 
 Frequently, we would have a very sunny day, suggesting the solar cells would fully charge the Li-Ion batteries to full capacity, which should allow the LEDs to illuminate through and beyond the full six (6) hour timed session.
 
@@ -542,7 +542,7 @@ Being a student and strong supporter of the "Scientific Method" to understanding
 
 Were rabid rabbits knawing through the wires?
 
-Were kids down the street tapping into my voltage source to power their $5,000 gaming-laptops to play "Overwatch"?
+Were kids down the street tapping into my top-secretly-modified solar battery voltage source to power their $5,000 gaming-laptops to play "Overwatch"?
 
 Did foreign nation-states just execute an "Electro-Magnetic Pulse" ("EMP") surgically and strategically targeting my solar-based, environmentally-friendy Minimum Viable Product ("MVP"), as they were secretly trying to corner the market in this multi-trillion dollar consumer space?
 
@@ -550,15 +550,19 @@ Or did something just "burn up"?
 
 I am blessed to have many friends, and my friends in many ways are brilliant.  
 
-Folks like me have two (2) sayings:
+Folks like me have many thoughtful sayings, two (2) of which for me are:
 
 1.  If you think you are the smartest person in the room, then that just proves you are not.
 
 2.  If you actually are the smartest person in the room, time to find a new room where you are not.
 
+In the end, it was (my) human error of not fact-checking what was really going on.
 
+What was really going on?
 
-Here are some pictures of these details.
+I was NOT getting the power efficiencies which i had previously experienced when building my own power/voltage converters!
+
+Below are some pictures of these details.
 
 ![Buck converter Vdd to LED Vpp correlation](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0229-buck-converter-vdd-to-led-vpp-correlation-20221110.JPG)
 
@@ -568,9 +572,35 @@ Here are some pictures of these details.
 
 ![Buck converters power conversion efficiency comparison](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0236-buck-converter-efficiency-comparison-20221117.JPG)
 
-The drop-out voltage of the factory LED controller, where the controller ceases to operate, is around 2.5 Volts:
+I cannot currently explain why the buck-converter architecture worked through most of last winter; it's possible that colder / freezing weather is a variable or influencer here, and perhaps that architecture was always "just barely on the edge of working" ... honestly not certain at this time.
+
+Back to the drawing board ... yet again.
+
+# "Simplicity is often best" Updates
+
+To improve the "power efficiency" story, i wanted to find a way to power the LEDs without a buck (or boost) voltage / power converter.
+
+The vendor-specified voltage is 3 "AA" 1.5 volt batteries in series, or 4.5 volts.
+
+The solar cell Li-Ion battery is 4.1 volts.
+
+So the $64,000 question becomes: how low can these factory LED controllers go?
+
+After some higly-scientific testing, it turns out that the drop-out voltage of the factory LED controller, where the controller ceases to operate, is around 2.5 Volts:
 
 ![LED Controller drop-out voltage](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0235-drop-out-voltage-20221117.JPG)
+
+But the three (3) 4.1 volt solar batteries, if used in parallel, will require forward-bias diodes in each path to prevent battery voltage differences cross-charging each other ... this can have a spectacular outcome, not in a good way.
+
+But under the three (3) x 50 milliamp load of the three (3) LED strings, would certainly result in a 0.7 volt drop from the 4.1 volt (at best) solar battery, yielding 3.4 volts.
+
+Minus the 0.25 volts drop across the length of 22 AWG wire going from front yard solar cell batteries to back yard LED controllers.  So now (at best) we're looking at 3.1 volts at the beginning of the evening illumination, with an LED controller cutout around 2.5 volts.
+
+That leaves 0.5 volts of difference between a nice winter's eve illumation and code hard winter darkness.
+
+What to do Pooh?  Yes, I know ... "think think think ..."
+
+# "Schottky in the dark" Updates
 
 Schematic for Schottky diode protected parallel solar cells / batteries:
 
@@ -586,6 +616,8 @@ Schottky diode protected parallel solar cells / batteries voltage testing after 
 
 ![Schottky diode parallel voltage testing](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0240-schottky-diode-power-voltage-20221124.JPG)
 
+# "If you think you've mastered the Angels in the Details of a project ... guess again" Updates
+
 TL431 5 Volt trigger testing (TL431 Cathode goes low when exceed 2.5 volt internal reference voltage):
 
 ![TL431 Circuit](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-tl431-5-volt-trigger-IMG_0241-20221124.JPG)
@@ -597,3 +629,18 @@ TL431 5 Volt trigger testing (TL431 Cathode goes low when exceed 2.5 volt intern
 ![TL431 Circuit - 5.08 volts on 1.92 volts](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-tl431-5-volt-trigger-IMG_0244-5.08V-on-1.92V-20221124.JPG)
 
 ![TL431 Circuit - 5.54 volts on 1.85 volts](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-tl431-5-volt-trigger-IMG_0245-5.54V-on-1.85V-20221124.JPG)
+
+Now let's construct a complete over-voltage protection circuit:
+
+![Over-voltage protection circuit - full breadboard](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0246-full-breadboard-20221127.JPG)
+
+![Over-voltage protection circuit - focused breadboard](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0247-focused-breadboard-20221127.JPG)
+
+![Over-voltage protection circuit - 5.02 volts not yet protected](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0248-5.02V-not-yet-protected-20221127.JPG)
+
+![Over-voltage protection circuit - 5/03 volts yes protected](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0252-5.03V-yes-protected-20221127.JPG)
+
+![Over-voltage protection circuit - circuit board view 1](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0254-circuit-01-20221127.JPG)
+
+![Over-voltage protection circuit - circuit board view 2](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0255-circuit-02-20221127.JPG)
+
