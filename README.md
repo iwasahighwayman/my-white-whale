@@ -532,13 +532,13 @@ Here is the schematic.
 
 # November 2022 Waning Gibbous Updates
 
-Indeed, as shared above in the "All Hallows' Eve 2022 Updates", i have working Raspberry PI Pico software which will manage the LEDs, however i am still currently using the vendor-provided controllers.
+Indeed, as shared above in the "All Hallows' Eve 2022 Updates", I have working Raspberry PI Pico software which will manage the LEDs, however I am still currently using the vendor-provided LED controllers.
 
 Frequently, we would have a very sunny day, suggesting the solar cells would fully charge the Li-Ion batteries to full capacity, which should allow the LEDs to illuminate through and beyond the full six (6) hour timed session.
 
-Sadly, more frequently than desired, less than four (4) hours after the LEDs illuminated, they would go dark.  On multiple evenings, i would immediately mount an evening investigation, and sure enough, the buck voltage converter's "power available" LED was also dark, indicating it was receiving no power from the batteries.
+Sadly, more frequently than desired, less than four (4) hours after the LEDs illuminated, they would go dark.  On multiple evenings, I would immediately mount an evening investigation, and sure enough, the buck voltage converter's "power available" LED was also dark, indicating it was receiving no power from the batteries.
 
-Being a student and strong supporter of the "Scientific Method" to understanding, i began an analysis of what might be transpiring under the cover of darkness.
+Being a student and strong supporter of the "Scientific Method" to understanding, I began an analysis of what might be transpiring under the cover of darkness.
 
 Were rabid rabbits knawing through the wires?
 
@@ -548,9 +548,9 @@ Did foreign nation-states just execute an "Electro-Magnetic Pulse" ("EMP") surgi
 
 Or did something just "burn up"?
 
-I am blessed to have many friends, and my friends in many ways are brilliant.  
+I am blessed to have many friends, and my friends are gifted in many ways.  
 
-Folks like me have many thoughtful sayings, two (2) of which for me are:
+Folks like me have thoughtful sayings, two (2) of which for me are:
 
 1.  If you think you are the smartest person in the room, then that just proves you are not.
 
@@ -560,7 +560,7 @@ In the end, it was (my) human error of not fact-checking what was really going o
 
 What was really going on?
 
-I was NOT getting the power efficiencies which i had previously experienced when building my own power/voltage converters!
+I was NOT getting the power efficiencies which I had previously experienced when building my own power/voltage converters!
 
 Below are some pictures of these details.
 
@@ -578,7 +578,7 @@ Back to the drawing board ... yet again.
 
 # "Simplicity is often best" Updates
 
-To improve the "power efficiency" story, i wanted to find a way to power the LEDs without a buck (or boost) voltage / power converter.
+To improve the "power efficiency" story, I wanted to find a way to power the LEDs without a buck (or boost) voltage / power converter.
 
 The vendor-specified voltage is 3 "AA" 1.5 volt batteries in series, or 4.5 volts.
 
@@ -592,15 +592,21 @@ After some higly-scientific testing, it turns out that the drop-out voltage of t
 
 But the three (3) 4.1 volt solar batteries, if used in parallel, will require forward-bias diodes in each path to prevent battery voltage differences cross-charging each other ... this can have a spectacular outcome, not in a good way.
 
-But under the three (3) x 50 milliamp load of the three (3) LED strings, would certainly result in a 0.7 volt drop from the 4.1 volt (at best) solar battery, yielding 3.4 volts.
+But under the three (3) x 50 milliamp load of the three (3) LED strings, would certainly result in the anticipated 0.7 volt drop across the forward-bias diodes from the 4.1 volt (at best) solar battery, yielding 3.4 volts.
 
 Minus the 0.25 volts drop across the length of 22 AWG wire going from front yard solar cell batteries to back yard LED controllers.  So now (at best) we're looking at 3.1 volts at the beginning of the evening illumination, with an LED controller cutout around 2.5 volts.
 
-That leaves 0.5 volts of difference between a nice winter's eve illumation and code hard winter darkness.
+That leaves 0.5 volts of difference between a nice winter's eve illumation and cold hard winter darkness.
 
-What to do Pooh?  Yes, I know ... "think think think ..."
+What to do Pooh?  Yes, I know ... "_think think think ..._"
 
 # "Schottky in the dark" Updates
+
+The mind is an interesting thing.  One may rack her/his brain on a problem for hours, with the outcome of "I dunno ...".  Then, in the middle of the night you snap awake with the solution.  Now the trick is to either remember the answer in the morning.  Or if like me, keep a small notepad and pen on the nightstand so I can quickly scribble down the answer ... now in the morning, I only need to remember that the midnight epiphany occurred.
+
+My morning-discovered scribble said "Schottky".  Of course, unlike the normal silicon signal or rectifier diode, which is a dual-semiconductor positive (P) to negative (n) doped junction, a Schottky diode is semiconductor to metal.  Unlike a normal silicon diode with a forward-bias voltage drop of approximately 0.7 volts, a Schottky diode only produces approximately a 0.2 volt forward-bias voltage drop.
+
+Updating the math above, the 4.1 volt solar batteries should then provide 3.9 volts after the Schottky diodes, minus the 2.5 volts due to the 22 AWS wire from front to back yard, yielding approximately 3.6 volts a the LED controllers.  This would provide over 1 volt of window between first-illuminated voltage to the LED controllers, and the measured 2.5 volt drop-out voltage, which is a much more acceptable solution.
 
 Schematic for Schottky diode protected parallel solar cells / batteries:
 
@@ -616,9 +622,61 @@ Schottky diode protected parallel solar cells / batteries voltage testing after 
 
 ![Schottky diode parallel voltage testing](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0240-schottky-diode-power-voltage-20221124.JPG)
 
-# "If you think you've mastered the Angels in the Details of a project ... guess again" Updates
+# "If you think you've mastered the _Angels in the Details_ of a project ... guess again" Updates
 
-TL431 5 Volt trigger testing (TL431 Cathode goes low when exceed 2.5 volt internal reference voltage):
+The breadboarding experimentation matched the mathematical calculations.
+
+The series solar batteries plus voltage converter architecture was replaced with the parallel solar batteries plus Schottky diode architecture.
+
+With the soldering iron cooling down, I took the new power box out to the solar cell batteries, and prepared to plug everything together.
+
+It was a beautiful, very sunny, and relatively warm early-winter day.  Very sunny.
+
+I don't know what made me double-check the solar cell battery voltage, but luckily I did:  __6.8 volts!__
+
+Unclear what the over-voltage threshold of the LED controllers is, but given they were designed to operate at 4.5 volts (max) via the three "AA" batteries, I would imagine that nearly 7 volts would cause damage or destruction.
+
+Up until now the solar cell battery voltage was never a consideration (though I should have thought to check after all this time!) because I either had a boost or buck voltage converter, and either had a large input voltage range and 7 volts would not be an issue.
+
+But now with the Schottky diode design, the output voltage would always be 0.2 volts below the solar cell voltage.
+
+Sigh ... yet the next thing to figure out.
+
+OK, time to get to work.
+
+At first I thought, this is straight-forward: I'll create a simple voltage comparator circuit and if the voltage exceeds a TBD threshold  (say, 5.0 volts), simply disconnect the solar battery power from the LED controller via a transistor or relay.
+
+But then I realized, that won't work.  Once power is removed from the LED controller, they lose their memory for on/off timer, and which illumination pattern was set (steady-on, flashing, etc.)  That means every night after a very sunny day, I would need to trudge outside and restart the LED controllers ... not operationally optimal at all.
+
+After a couple more midnight awakenings, I figured out one possible solution.
+
+Going back to the basic facts of how the solar cell charging integrated circuit (IC) works, plus how the overall architecture works through the course of a 24 hour cycle, the solution is a little more complicated than desired, but it does appear to work.
+
+The both the solar cells (charging) and LED controllers (discharging) are by-design connected together and also connected to the charging IC's input voltage.  The charging IC then manages the current into the Li-Ion battery (charging) and out of the battery (discharging).  That's how the IC provides over-voltage/over-current/over-heating of the Li-Ion battery.  In a typical solution not using solar cells for charging and their associated very wide range of output voltage, a regulated power supply would be used and it would be set to be just a little higher voltage than the 4.1 volts of the Li-Ion battery, and that slightly higher voltage would be compatible with whatever is the circuit being battery-operated.
+
+In my current situation, the solar cells will produce the 6.8 volts under very sunny conditions, but decay down to zero volts produced by the solar cells in darkness (that's where the batteries take over and provide evening illumination.)  Throughout this journey, I have been very sensitive to the amount of power consumption of the various architectures tested, to maximize how long the LED controllers and thier LEDs can run on a single charge.  But here, on very sunny days, the solar cells are actually producing too much power ... so it's ok to be a little wasteful, so long as not so wasteful that the solution begins drawing current out of the batteries.
+
+A 5 volt LM340T5 (7805) linear series voltage regulator is considered "low power" though everything is relative, and I would not consider it "ultra low power" which is what I have been designing to.
+
+And a 5 volt coil double-pole double-throw (DPDT) normally-open + normally-closed (NO-NC) contacts relay is definitely not considered "ultra low power".
+
+However these two components together are still easily powered by the three (3) solar cells connected in parallel; each solar cell is actually capable of producing quite a bit of current.
+
+In my new "Over-voltage protection circuit", there will be two output voltages produced leading to the onboard Schottky diodes:
+- The direct solar cell and battery output which may rise to nearly 7 volts but operates in darkness off the batteries at 4.1 volts  
+- The 5 volt regulated output from the 7805  
+
+I'll then use a voltage comparator circuit to control the relay.  When the solar cell and battery voltage is below 5 volts, this direct output passes through the relay's normally-closed terminals to the LED controllers ... this is safe / fine because the LED controllers, though designed to run at 4.5 volts, most-likely can handle 5.0 volts without damage.  However when the solar cell and battery voltage is above 5 volts, the 5 volt regulated 7805 output will be fed to the LED controllers through the normally-open terminals.
+
+Because the 7805 requires approximately 1.5 volts of "overhead input voltage" beyond it's output voltage (thus 6.5 volts at the input of the 7805 regulator), at solar cell and battery voltage of 5 volts, the 7805's output is only around 3.5 volts.  But 3.5 volts is well-above the 2.5 volt drop-out voltage of the LED controllers, so as the source voltage flips between direct solar cell and battery output when below 5 volts, and the 7805's 3.5 volts when solar cell output exceeds 5 volts, the LED controllers should always have power and retain their timer and settings memory.
+
+The TL431 voltage reference is a natural fit in the design.  It's highly accurate, extremely mature and versitile ... and importantly very inexpensive.  Operated in the open-loop mode, what the TL431 does is reduce it's output voltage and sink more current when the external reference voltage pin exceeds it's internal 2.5 volt reference voltage.  Essentially the TL431 tries to be an open switch when below 2.5 volts and a closed switch when above 2.5 volts.  But being a semiconductor circuit, it has voltage drops and parasitic resistances, so in actuality it's not a perfect switch.
+
+I used two (2) 10K resistors to equally-divide the solar cell and battery voltage at the TL341's external reference pin, resulting in 5 volts of solar cell and battery voltage being presented as 2.5 volts at the external reference pin.
+
+Finally, the TL431 does require approximately 1 milliamp of output current to operate, so using a 2.2K resistor on the cathode will produce a couple milliamps of quiescent current.
+
+TL431 5 Volt trigger testing - the TL431 cathode sharply goes low when the 2.5 volt internal reference voltage is exceeded:
 
 ![TL431 Circuit](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-tl431-5-volt-trigger-IMG_0241-20221124.JPG)
 
@@ -630,6 +688,14 @@ TL431 5 Volt trigger testing (TL431 Cathode goes low when exceed 2.5 volt intern
 
 ![TL431 Circuit - 5.54 volts on 1.85 volts](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-tl431-5-volt-trigger-IMG_0245-5.54V-on-1.85V-20221124.JPG)
 
+We need to convert the TL431's "closed switch to ground at high external reference voltage" signal into a control signal to close the 5 volt coil DPDT relay's normally-open (NO) terminal, applying the output of the 7805 regulator's voltage to the relay's common terminal, sending that voltage to the LED controllers, instead of the now-too-high normally-closed (NC) terminal's direct solar battery voltage.  This is easily achieved by using a general purpose PNP bipolar junction transistor (BJT).  I selected the common 2N2907 PNP transistor for this purpose - also mature, versatile and inexpensive.  Simply use a 10K resistor between the TL431's cathode and the 2N2907's base lead to limit the base current.
+
+N.B.: There is significant conflicting diagrams and information on the exact pinout of the 2N2907 transistor in the TO-92 package.  There are actually quite a few datasheets and diagrams depicting collector-base-emitter (CBE), though my recollection was always emitter-base-collector (EBC).  Under very low current conditions, say powering an LED through a 1K resistor, breadboarding the 2N2907 CBE or EBC will sort-of result in working either way.  To truly determine which lead is the emitter and which is the collector, you need to measure the voltage across leads 1 and 3 with a saturated base current (forcing the transistor to be "full-on".)  If the voltage is more than 100 millivolts then you have the transistor leads 1 and 3 backwards.  Using this approach, I confirmed the correct pinouts for my batch of 2N2907 transistors is EBC.
+
+And of course, remember to include the reverse-biased rectifier diode across the relay coil, so the inductive kick reverse current produced when the PNP transistor cuts voltage to the coil does not blow the transistor.
+
+Finally, it would be nice to have an onboard LED illuminate when we are at too-high-voltage situation and the power supplied is the 7805 regulator's output.  Easily done by placing an LED and 10K resistor in parallel with the relay coil.
+
 Now let's construct a complete over-voltage protection circuit:
 
 ![Over-voltage protection circuit - full breadboard](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0246-full-breadboard-20221127.JPG)
@@ -638,7 +704,7 @@ Now let's construct a complete over-voltage protection circuit:
 
 ![Over-voltage protection circuit - 5.02 volts not yet protected](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0248-5.02V-not-yet-protected-20221127.JPG)
 
-![Over-voltage protection circuit - 5/03 volts yes protected](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0252-5.03V-yes-protected-20221127.JPG)
+![Over-voltage protection circuit - 5.03 volts yes protected](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0252-5.03V-yes-protected-20221127.JPG)
 
 ![Over-voltage protection circuit - circuit board view 1](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0254-circuit-01-20221127.JPG)
 
