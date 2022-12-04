@@ -670,11 +670,11 @@ I'll then use a voltage comparator circuit to control the relay.  When the solar
 
 Because the 7805 requires approximately 1.5 volts of "overhead input voltage" beyond it's output voltage (thus 6.5 volts at the input of the 7805 regulator), at solar cell and battery voltage of 5 volts, the 7805's output is only around 3.5 volts.  But 3.5 volts is well-above the 2.5 volt drop-out voltage of the LED controllers, so as the source voltage flips between direct solar cell and battery output when below 5 volts, and the 7805's 3.5 volts when solar cell output exceeds 5 volts, the LED controllers should always have power and retain their timer and settings memory.
 
-The TL431 voltage reference is a natural fit in the design.  It's highly accurate, extremely mature and versitile ... and importantly very inexpensive.  Operated in the open-loop mode, what the TL431 does is reduce it's output voltage and sink more current when the external reference voltage pin exceeds it's internal 2.5 volt reference voltage.  Essentially the TL431 tries to be an open switch when below 2.5 volts and a closed switch when above 2.5 volts.  But being a semiconductor circuit, it has voltage drops and parasitic resistances, so in actuality it's not a perfect switch.
+The TL431 voltage reference is a natural fit in the design.  It's highly accurate, extremely mature and versitile ... and importantly very inexpensive.  Operated in the open-loop mode, what the TL431 does is reduce it's output (cathode) voltage and sink more current when the external Vref reference voltage pin exceeds it's internal 2.5 volt reference voltage.  Essentially the TL431 tries to be an open switch when the external Vref reference voltage is below 2.5 volts and a closed switch when the external Vref reference voltage is above 2.5 volts.  But being a semiconductor circuit, it has voltage drops and parasitic resistances, so in actuality it's not a perfect switch.
 
-I used two (2) 10K resistors to equally-divide the solar cell and battery voltage at the TL341's external reference pin, resulting in 5 volts of solar cell and battery voltage being presented as 2.5 volts at the external reference pin.
+I used two (2) 10K resistors to equally-divide the solar cell and battery voltage at the TL341's external Vref reference voltage pin, resulting in 5 volts of solar cell and battery voltage being presented as 2.5 volts at the external Vref reference voltage pin.
 
-Finally, the TL431 does require approximately 1 milliamp of output current to operate, so using a 2.2K resistor on the cathode will produce a couple milliamps of quiescent current.
+Finally, the TL431 does require approximately 1 milliamp of output (cathode) current to operate, so using a 2.2K resistor on the cathode will produce a couple milliamps of quiescent current.
 
 TL431 5 Volt trigger testing - the TL431 cathode sharply goes low when the 2.5 volt internal reference voltage is exceeded:
 
