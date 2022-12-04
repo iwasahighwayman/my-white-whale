@@ -698,6 +698,8 @@ Finally, it would be nice to have an onboard LED illuminate when we are at too-h
 
 Now let's construct a complete over-voltage protection circuit:
 
+![Over-voltage protection circuit - schematic](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-schematic-20221204.png)
+
 ![Over-voltage protection circuit - full breadboard](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0246-full-breadboard-20221127.JPG)
 
 ![Over-voltage protection circuit - focused breadboard](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0247-focused-breadboard-20221127.JPG)
